@@ -121,6 +121,7 @@ body {
 .dashboard {
     padding: 20px;
     margin: 20px;
+    width: 100%;
 }
 
 .info-icon {
@@ -128,4 +129,33 @@ body {
     font-size: 50px;
     color: #00C6E9;
     padding: 29px;
+}
+
+.info-count > span.main-info {
+		position: absolute;
+    left: 25%;
+    top: 70%;
+    -webkit-transform: translate(-40%, -40%);
+    transform: translate(-40%, -40%);
+    font-size: 40px;
+}
+
+.info-count > span.secondary-info-one {
+		position: absolute;
+    left: 85%;
+    top: 68%;
+    -webkit-transform: translate(-40%, -40%);
+    transform: translate(-40%, -40%);
+    font-size: 15px;
+    width: 100%;
+}
+
+.info-count > span.secondary-info-two {
+		position: absolute;
+    left: 85%;
+    top: 75%;
+    -webkit-transform: translate(-40%, -40%);
+    transform: translate(-40%, -40%);
+    font-size: 15px;
+    width: 100%;
 }
