@@ -1,7 +1,4 @@
-/**
- * 
- */
-var myApp = angular.module("dasboard-module", []);
+var myApp = angular.module("dashboardModule", ["ng-fusioncharts"]);
 
 var numberLoader = function() {
     $('.count').each(function () {
@@ -26,5 +23,79 @@ myApp.controller("navbarController", function($scope) {
 myApp.controller("dashboardController", function($scope, $rootScope, $timeout) {
     $rootScope.$on('$includeContentLoaded', function() {
         numberLoader();
-      });
+    });
+
+	//Define the `myDataSource` scope variable.
+  $scope.myDataSource = {
+     chart: {
+         /*caption: "Harry's SuperMart",
+         subCaption: "Top 5 stores in last month by revenue",
+         numberPrefix: "$",
+         theme: "fint"*/
+         "caption": "Total Visits",
+         "subCaption": "per page",
+         "yAxisName": "Unique Visits",
+         "paletteColors": "#0075c2",
+         "bgColor": "#ffffff",
+         "borderAlpha": "20",
+         "canvasBorderAlpha": "0",
+         "usePlotGradientColor": "0",
+         "plotBorderAlpha": "10",
+         "placevaluesInside": "1",
+         "rotatevalues": "1",
+         "valueFontColor": "#ffffff",
+         "showXAxisLine": "1",
+         "xAxisLineColor": "#999999",
+         "divlineColor": "#999999",
+         "divLineIsDashed": "1",
+         "showAlternateHGridColor": "0",
+         "subcaptionFontBold": "0",
+         "subcaptionFontSize": "14"
+     },
+     data:[{
+         label: "Home",
+         value: "100"
+     },
+     {
+         label: "Cricket",
+         value: "56"
+     },
+     {
+         label: "Movies",
+         value: "70"
+     },
+     {
+         label: "Fantasy Cricket",
+         value: "47"
+     }]
+   }
+
+   $scope.visitsByCountry = {
+       chart: {
+           caption: "Visits By Country",
+           subcaption: "In Percentage",
+           startingangle: "120",
+           showlabels: "0",
+           showlegend: "1",
+           enablemultislicing: "0",
+           slicingdistance: "15",
+           showpercentvalues: "1",
+           showpercentintooltip: "0",
+           theme: "fint"
+       },
+       data: [
+           {
+               label: "India",
+               value: "235"
+           },
+           {
+               label: "Canada",
+               value: "15"
+           },
+           {
+               label: "United States",
+               value: "3"
+           }
+       ]
+   }
 });

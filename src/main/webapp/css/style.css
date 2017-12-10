@@ -11,6 +11,14 @@ body {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     width: calc(100% - 260px);
     float: right;
+    position: fixed;
+    z-index: 999;
+}
+
+.navbar-wrapper {
+	padding-bottom: 40px;
+	width: calc(100% - 260px);
+	float: right;
 }
 
 /* side-bar styles */
@@ -20,7 +28,7 @@ body {
     position: fixed;
     height: 100%;
     top: 0;
-    background-image: url("../images/sidebar-background2.jpg");
+    background-image: url("../images/sidebar-background3.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -119,15 +127,16 @@ body {
 }
 
 .dashboard {
-    padding: 20px;
+    padding-top: 20px;
     margin: 20px;
     width: 100%;
+    overflow: hidden;
 }
 
 .info-icon {
     text-align: center;
     font-size: 50px;
-    color: #00C6E9;
+    color: #0074BF;
     padding: 29px;
 }
 
@@ -158,4 +167,21 @@ body {
     transform: translate(-40%, -40%);
     font-size: 15px;
     width: 100%;
+}
+
+.table-half {
+	padding-top: 20px;
+}
+
+.table-half > .card {
+	border-radius: 0;
+}
+
+/*
+.table-half > .card > .card-body {
+	padding: 0;
+}*/
+
+.table-half > .card > .card-body > .table-striped > tbody > tr:nth-child(2n+1) > td, .table-half > .card > .card-body > .table-striped > tbody > tr:nth-child(2n+1) > th {
+   background-color: #e6ffff;
 }
