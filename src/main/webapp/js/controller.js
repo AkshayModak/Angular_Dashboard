@@ -1,4 +1,4 @@
-var myApp = angular.module("dashboardModule", ["ng-fusioncharts"]);
+var myApp = angular.module("dashboardModule", ["ng-fusioncharts", "ui.bootstrap", "ngRoute"]);
 
 var numberLoader = function() {
     $('.count').each(function () {
@@ -14,16 +14,39 @@ var numberLoader = function() {
     });
 }
 
+myApp.controller("sidebarController", function($scope) {
+    $scope.showNavDropdown = false;
+});
+
 myApp.controller("navbarController", function($scope) {
     $scope.toggleSidebar = function() {
         jQuery("#side-bar").toggleClass("active");
     }
+
+    $scope.isNavCollapsed = true;
+    $scope.isCollapsed = false;
+    $scope.isCollapsedHorizontal = false;
 });
 
 myApp.controller("dashboardController", function($scope, $rootScope, $timeout) {
     $rootScope.$on('$includeContentLoaded', function() {
         numberLoader();
     });
+
+	 $scope.totalItems = 64;
+    $scope.currentPage = 4;
+
+    $scope.setPage = function (pageNo) {
+      $scope.currentPage = pageNo;
+    };
+
+    $scope.pageChanged = function() {
+      $log.log('Page changed to: ' + $scope.currentPage);
+    };
+
+    $scope.maxSize = 5;
+    $scope.bigTotalItems = 175;
+    $scope.bigCurrentPage = 1;
 
 	//Define the `myDataSource` scope variable.
   $scope.myDataSource = {
@@ -98,4 +121,21 @@ myApp.controller("dashboardController", function($scope, $rootScope, $timeout) {
            }
        ]
    }
+});
+
+myApp.config(function($routeProvider) {
+    $routeProvider
+    .when("/", {
+      controller: "dashboardController",
+      templateUrl : "includes/dashboard.html"
+    })
+    .when("/red", {
+        templateUrl : "includes/tables.html"
+    })
+    .when("/green", {
+        templateUrl : "green.htm"
+    })
+    .when("/blue", {
+        templateUrl : "blue.htm"
+    });
 });
