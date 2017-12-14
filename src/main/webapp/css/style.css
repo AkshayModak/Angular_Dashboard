@@ -1,7 +1,14 @@
 @CHARSET "UTF-8";
 
-body {
-    background-color: #F7F7F8;
+html, body {
+    background-color: #E7EBEE !important;
+    height: 100%;
+    margin: 0;
+}
+
+.footer,
+.push {
+  height: 50px;
 }
 
 /* navbar styles */
@@ -14,7 +21,7 @@ body {
 }
 
 .bg-navbar {
-    background-color: rgba(255, 255, 255, 0.96) !important;
+    background-color: #061B21 !important;
     color: #777;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
     width: calc(100% - 260px);
@@ -181,12 +188,26 @@ body {
 #content {
     float: right;
     width: calc(100% - 260px);
+    padding-top: 22px;
+}
+
+#wrapper {
+		min-height: 100%;
+    margin: 0 auto -50px;
 }
 
 .card {
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(63, 63, 68, 0.1);
+		background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     border-radius: 12px 12px 12px 12px;
     border: 0;
+}
+
+.card-body > .card-title {
+	font-size: 22px;
+	background-color: #061B21;
+	color: white;
+	padding: 15px;
 }
 
 .card-info {
@@ -215,7 +236,6 @@ body {
 }
 
 .dashboard {
-    padding-top: 20px;
     margin-top: 20px;
     width: 100%;
     overflow: hidden;
@@ -280,5 +300,95 @@ body {
 
 .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span,
  .pagination>.active>span:focus, .pagination>.active>span:hover {
-	background-color: #007bff !important;
+	background-color: #061B21 !important;
+}
+
+.pagination {
+	padding-left: 15px !important;
+}
+
+.edit-table > tbody > tr > td > .form-control {
+		padding: 1px 8px;
+		border-radius: inherit;
+
+}
+
+.cricket-card {
+		padding: 0;
+		border-radius: 0;
+}
+
+.cricket-card > .card-body > .card-title {
+		padding: 22px;
+		border-bottom: 1px solid #efefef;
+		background-color: #061B21;
+		color: white;
+}
+
+.match-number {
+		width: 60px !important;
+}
+
+.cricket-city {
+		width: 100px !important;
+}
+
+.input-group-addon, .input-group-btn {
+		width: inherit !important;
+}
+
+.dashboard-tables {
+		height: 600px;
+}
+
+
+/* checkbox styles */
+.checkbox label:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.checkbox .cr {
+  position: relative;
+  display: inline-block;
+  border: 1px solid #a9a9a9;
+  border-radius: .25em;
+  width: 1.3em;
+  height: 1.3em;
+  float: left;
+  margin-right: .5em;
+}
+
+.checkbox .cr .cr-icon {
+  position: absolute;
+  font-size: .8em;
+  line-height: 0;
+  top: 50%;
+  left: 20%;
+}
+
+.checkbox label input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox label input[type="checkbox"]+.cr>.cr-icon {
+  opacity: 0;
+}
+
+.checkbox label input[type="checkbox"]:checked+.cr>.cr-icon {
+  opacity: 1;
+}
+
+.checkbox label input[type="checkbox"]:disabled+.cr {
+  opacity: .5;
+}
+
+.date-picker > span.input-group-addon {
+		background-color: white;
+		cursor: pointer;
+}
+
+.date-picker > span.input-group-addon > a {
+		color: black;
 }
