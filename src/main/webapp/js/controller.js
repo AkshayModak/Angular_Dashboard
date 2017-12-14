@@ -227,10 +227,11 @@ myApp.config(function($routeProvider) {
     })
     .when("/cricket", {
         controller: "cricketController",
-        templateUrl : "includes/tables.html"
+        templateUrl : "includes/cricket.html"
     })
-    .when("/green", {
-        templateUrl : "green.htm"
+    .when("/movies", {
+        controller: "moviesController",
+        templateUrl : "includes/movies.html"
     })
     .when("/blue", {
         templateUrl : "blue.htm"

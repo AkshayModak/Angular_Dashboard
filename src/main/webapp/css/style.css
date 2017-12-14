@@ -392,3 +392,33 @@ html, body {
 .date-picker > span.input-group-addon > a {
 		color: black;
 }
+
+.cricket-card > .card-body > div:nth-child(2) {
+		border: 0;
+}
+
+.create-button > div:nth-child(1){
+		margin: 20px 0;
+		padding-left: 40px;
+}
+
+.create-button > div > button.btn {
+		background-color: #061B21;
+		color: white;
+		border-radius: 0;
+}
+
+.custom-button {
+		background-color: #061B21 !important;
+    color: white !important;
+    border-radius: 0 !important;
+}
+
+.create-table {
+		border-bottom : 1px solid #efefef;
+		margin-bottom: 20px;
+}
+
+.form-control {
+		border-radius: 0 !important;
+}

@@ -1,0 +1,104 @@
+<div ng-controller="cricketController">
+  <div class="container-fluid">
+    <div class="card cricket-card">
+      <div class="card-body">
+        <div class="card-title">
+          Cricket
+          <span class="pull-right">
+            <span class="input-group">
+              <input type="text" class="form-control"/>
+              <span class="input-group-addon"><i class="fa fa-search"></i></span>
+            </span>
+          </span>
+        </div>
+        <table class="table table-hover edit-table">
+          <thead>
+          <tr>
+            <th></th>
+            <th>Team One</th>
+            <th>Team Two</th>
+            <th>Stadium</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>#</th>
+            <th>Match Type</th>
+            <th>Series Name</th>
+            <th>From Date</th>
+            <th>To Date</th>
+            <th>Time</th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+                </label>
+              </div>
+            </td>
+            <td>
+              <select class="form-control">
+                <option>IND</option>
+              </select>
+            </td>
+            <td>
+              <select class="form-control">
+                <option>AUS</option>
+              </select>
+            </td>
+            <td><input type="text" class="form-control"/></td>
+            <td><input type="text" class="cricket-city form-control"/></td>
+            <td>
+              <select class="form-control">
+                <option>IND</option>
+              </select>
+            </td>
+            <td><input type="number" class="match-number form-control"/></td>
+            <td>
+              <select class="form-control">
+                <option>Test</option>
+              </select>
+            </td>
+            <td>
+              <select class="form-control">
+                <option>Sri Lanka in India</option>
+              </select>
+            </td>
+            <td>
+              <div class="input-group date-picker">
+                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt1" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                <span class="input-group-addon">
+                    <a ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></a>
+                  </span>
+              </div>
+            </td>
+            <td>
+              <div class="input-group date-picker">
+                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                <span class="input-group-addon">
+                    <a ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></a>
+                  </span>
+              </div>
+            </td>
+            <td>
+              <div uib-timepicker ng-model="mytime" ng-change="changed()" show-spinners="false"></div>
+            </td>
+            <td>
+              <ul class="list-inline">
+                <li><a href="#" class="btn"><i class="fa fa-refresh" aria-hidden="true"></i></a></li>
+                <li><a href="#" class="btn"><i class="fa fa-trash" aria-hidden="true"></i></a></li>
+              </ul>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <ul uib-pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-md"
+            boundary-links="true" force-ellipses="true">
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

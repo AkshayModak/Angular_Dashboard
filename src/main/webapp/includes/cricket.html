@@ -11,20 +11,91 @@
             </span>
           </span>
         </div>
+        <div class="row create-button">
+          <div class="col-xs-12 col-md-6">
+            <button type="button" class="btn btn-primary pull-left">Create New</button>
+          </div>
+          <div class="col-xs-12 col-md-6">
+            <ul uib-pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize"
+                class="pagination-md pull-right" boundary-links="true" force-ellipses="true">
+            </ul>
+          </div>
+        </div>
+
+        <table class="table create-table">
+          <thead>
+            <tr>
+              <th>Remove</th>
+              <th colspan="2">Series</th>
+              <th>With</th>
+              <th>Location</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="">
+                    <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+                  </label>
+                </div>
+              </td>
+              <td colspan="2">
+                <select class="form-control">
+                  <option>Australia in England, 2018</option>
+                </select>
+              </td>
+              <td>
+                <select class="form-control">
+                  <option>Australia</option>
+                </select>
+              </td>
+              <td>
+                <select class="form-control">
+                  <option>India</option>
+                </select>
+              </td>
+              <td>
+                <div class="input-group date-picker">
+                  <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt1" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                  <span class="input-group-addon">
+                    <a ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></a>
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div class="input-group date-picker">
+                  <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt1" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                  <span class="input-group-addon">
+                    <a ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></a>
+                  </span>
+                </div>
+              </td>
+              <td>
+                <button type="button" class="btn btn-primary custom-button">Create</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
         <table class="table table-hover edit-table">
           <thead>
             <tr>
               <th></th>
-              <th>Team One</th>
-              <th>Team Two</th>
+              <th>Home</th>
+              <th>Against</th>
               <th>Stadium</th>
               <th>City</th>
               <th>Country</th>
               <th>#</th>
-              <th>Match Type</th>
-              <th>Series Name</th>
-              <th>From Date</th>
-              <th>To Date</th>
+              <th>Type</th>
+              <th>Series</th>
+              <th>From</th>
+              <th>To</th>
               <th>Time</th>
               <th></th>
             </tr>
@@ -95,9 +166,6 @@
             </tr>
           </tbody>
         </table>
-        <ul uib-pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-md"
-            boundary-links="true" force-ellipses="true">
-        </ul>
       </div>
     </div>
   </div>
