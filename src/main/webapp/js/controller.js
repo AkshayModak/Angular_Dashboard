@@ -1,5 +1,68 @@
 var myApp = angular.module("dashboardModule", ["ng-fusioncharts", "ui.bootstrap", "ngRoute"]);
 
+/* Generic Functions */
+var datePickerFunction = function($scope) {
+		console.log("===Inside datePickerFunction===");
+
+    $scope.dateOptions = {
+        formatYear: 'yy',
+        maxDate: new Date(2020, 5, 22),
+        minDate: new Date(),
+        startingDay: 1
+    };
+
+    $scope.open1 = function() {
+      $scope.popup1.opened = true;
+    };
+
+    $scope.open2 = function() {
+      $scope.popup2.opened = true;
+    };
+
+    $scope.setDate = function(year, month, day) {
+      $scope.dt = new Date(year, month, day);
+    };
+
+    $scope.formats = ['dd-MMMM-yyyy', 'shortDate'];
+    $scope.format = $scope.formats[0];
+
+    $scope.popup1 = {
+      opened: false
+    };
+
+    $scope.popup2 = {
+      opened: false
+    };
+}
+
+var getMonthDescription = function(month_index) {
+		var month = [];
+
+		month[0] = "January";
+    month[1] = "February";
+    month[2] = "March";
+    month[3] = "April";
+    month[4] = "May";
+    month[5] = "June";
+    month[6] = "July";
+    month[7] = "August";
+    month[8] = "September";
+    month[9] = "October";
+    month[10] = "November";
+    month[11] = "December";
+
+    return month[month_index];
+}
+
+var formatDate = function(date_format, dateObj) {
+		if (date_format === ("MMMM-dd-yyyy")) {
+				return getMonthDescription(dateObj.getMonth()) + " " + dateObj.getDate() + ", " + dateObj.getFullYear();
+		}
+		if (date_format === "tt") {
+				return dateObj.getHours() + ":" + dateObj.getMinutes();
+		}
+}
+
 var numberLoader = function() {
     $('.count').each(function () {
         $(this).prop('Counter',0).animate({
@@ -123,100 +186,123 @@ myApp.controller("dashboardController", function($scope, $rootScope, $timeout) {
    }
 });
 
-myApp.controller("cricketController", function($scope) {
-		$scope.today = function() {
-        $scope.dt = new Date();
-      };
-      $scope.today();
+myApp.controller("cricketController", function($scope, $uibModal, $log, $document) {
 
-      $scope.clear = function() {
-        $scope.dt = null;
-      };
+			$scope.remove = false;
 
-      $scope.inlineOptions = {
-        customClass: getDayClass,
-        minDate: new Date(),
-        showWeeks: true
-      };
+			$scope.removeSeries = function() {
+					console.log("===remove Series======");
+					$scope.remove = !$scope.remove;
+			}
 
-      $scope.dateOptions = {
-        dateDisabled: disabled,
-        formatYear: 'yy',
-        maxDate: new Date(2020, 5, 22),
-        minDate: new Date(),
-        startingDay: 1
-      };
+			datePickerFunction($scope);
 
-      // Disable weekend selection
-      function disabled(data) {
-        var date = data.date,
-          mode = data.mode;
-        return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
-      }
+			homeList = [];
+			homeList.push("India");
+			homeList.push("Australia");
 
-      $scope.toggleMin = function() {
-        $scope.inlineOptions.minDate = $scope.inlineOptions.minDate ? null : new Date();
-        $scope.dateOptions.minDate = $scope.inlineOptions.minDate;
-      };
+			againstList = [];
+			againstList.push("England");
+			againstList.push("Australia");
 
-      $scope.toggleMin();
+			countryList = [];
+			countryList.push("Australia");
+			countryList.push("England");
+			countryList.push("South Africa");
+			countryList.push("India");
+			countryList.push("New Zealand");
+			countryList.push("West Indies");
 
-      $scope.open1 = function() {
-        $scope.popup1.opened = true;
-      };
+			matchTypeList = [];
+			matchTypeList.push("ODI");
+			matchTypeList.push("TEST");
+			matchTypeList.push("T20");
 
-      $scope.open2 = function() {
-        $scope.popup2.opened = true;
-      };
+			seriesList = [];
+			seriesList.push("India in West Indies");
+			seriesList.push("Australia in India");
+			seriesList.push("South Africa in New Zealand");
+			seriesList.push("The Ashes");
+			seriesList.push("Indian Premier League");
 
-      $scope.setDate = function(year, month, day) {
-        $scope.dt = new Date(year, month, day);
-      };
+			$scope.createNewCricket = function() {
+					$scope.open(null);
+			}
 
-      $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-      $scope.format = $scope.formats[0];
-      $scope.altInputFormats = ['M!/d!/yyyy'];
+			var to_date = new Date("2018-01-26T18:30:00.000+0530");
+			var from_date = new Date("2017-12-15T18:30:00.000+0530");
+			var time = new Date("2017-12-14T18:30:00.000+0530");
 
-      $scope.popup1 = {
-        opened: false
-      };
+			formatDate("dd-MM-yyyy", to_date);
 
-      $scope.popup2 = {
-        opened: false
-      };
-
-      var tomorrow = new Date();
-      tomorrow.setDate(tomorrow.getDate() + 1);
-      var afterTomorrow = new Date();
-      afterTomorrow.setDate(tomorrow.getDate() + 1);
-      $scope.events = [
-        {
-          date: tomorrow,
-          status: 'full'
+      $scope.cricketList = [
+        {home: "India", against: "Australia", stadium: "Holkar Stadium", city: "Indore", country: "India", match: "1st",
+          type: "TEST", series: "The Ashes", from: formatDate("MMMM-dd-yyyy", from_date), to: formatDate("MMMM-dd-yyyy", to_date), time: formatDate("tt", time),
+          homeList: homeList, againstList: againstList, countryList: countryList, matchTypeList: matchTypeList, seriesList: seriesList
         },
-        {
-          date: afterTomorrow,
-          status: 'partially'
+        {home: "India", against: "Australia", stadium: "Holkar Stadium", city: "Indore", country: "India", match: "1st",
+                  type: "TEST", series: "The Ashes", from: formatDate("MMMM-dd-yyyy", from_date), to: formatDate("MMMM-dd-yyyy", to_date), time: formatDate("tt", time),
+                  homeList: homeList, againstList: againstList, countryList: countryList, matchTypeList: matchTypeList, seriesList: seriesList
         }
-      ];
+      ]
 
-      function getDayClass(data) {
-        var date = data.date,
-          mode = data.mode;
-        if (mode === 'day') {
-          var dayToCheck = new Date(date).setHours(0,0,0,0);
 
-          for (var i = 0; i < $scope.events.length; i++) {
-            var currentDay = new Date($scope.events[i].date).setHours(0,0,0,0);
 
-            if (dayToCheck === currentDay) {
-              return $scope.events[i].status;
+
+
+
+
+
+
+
+
+      var $ctrl = this;
+        $ctrl.items = ['item1', 'item2', 'item3'];
+
+        animationsEnabled = true;
+
+        $scope.open = function (_cricket) {
+        console.log(_cricket);
+          paramList = [
+            { params: _cricket, requestName: "requestname" }
+          ];
+          var modalInstance = $uibModal.open({
+            animation: animationsEnabled,
+            ariaLabelledBy: 'modal-title',
+            ariaDescribedBy: 'modal-body',
+            templateUrl: 'myModalContent.html',
+            controller: 'ModalInstanceCtrl',
+            resolve: {
+              items: function () {
+                return paramList;
+              },
             }
-          }
-        }
+          });
+        };
 
-        return '';
-      }
+
+
+
+
+
+
+
+
+
+
+});
+
+myApp.controller('ModalInstanceCtrl', function ($uibModalInstance, $uibModalStack, items, $scope) {
+		$scope.paramData = items[0].params;
+
+		$scope.ok = function(paramData) {
+				console.log(paramData);
+		}
+
+		$scope.cancel = function () {
+		  $uibModalInstance.close();
+		};
+		datePickerFunction($scope);
 });
 
 myApp.config(function($routeProvider) {

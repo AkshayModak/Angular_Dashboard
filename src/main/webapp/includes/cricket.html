@@ -1,29 +1,18 @@
+<ol class="breadcrumb">
+  <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+  <li class="active">Cricket</li>
+</ol>
 <div ng-controller="cricketController">
   <div class="container-fluid">
+
     <div class="card cricket-card">
       <div class="card-body">
         <div class="card-title">
-          Cricket
-          <span class="pull-right">
-            <span class="input-group">
-              <input type="text" class="form-control"/>
-              <span class="input-group-addon"><i class="fa fa-search"></i></span>
-            </span>
-          </span>
+          Series
+          <h5>Here You can Add or Update Cricket Series.</h5>
         </div>
-        <div class="row create-button">
-          <div class="col-xs-12 col-md-6">
-            <button type="button" class="btn btn-primary pull-left">Create New</button>
-          </div>
-          <div class="col-xs-12 col-md-6">
-            <ul uib-pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize"
-                class="pagination-md pull-right" boundary-links="true" force-ellipses="true">
-            </ul>
-          </div>
-        </div>
-
         <table class="table create-table">
-          <thead>
+            <thead>
             <tr>
               <th>Remove</th>
               <th colspan="2">Series</th>
@@ -33,21 +22,22 @@
               <th>End Date</th>
               <th></th>
             </tr>
-          </thead>
-          <tbody>
+            </thead>
+            <tbody>
             <tr>
               <td>
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" value="">
-                    <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+                    <input type="checkbox" ng-click="removeSeries()">
+                    <span class="cr"><i class="cr-icon fa fa-check" aria-hidden="true"></i></span>
                   </label>
                 </div>
               </td>
               <td colspan="2">
-                <select class="form-control">
+                <select ng-if="remove" class="form-control">
                   <option>Australia in England, 2018</option>
                 </select>
+                <input ng-if="!remove" type="text" class="form-control">
               </td>
               <td>
                 <select class="form-control">
@@ -62,37 +52,67 @@
               <td>
                 <div class="input-group date-picker">
                   <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt1" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
-                  <span class="input-group-addon">
-                    <a ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></a>
+                  <span class="input-group-addon" ng-click="open1()">
+                    <a><i class="fa fa-calendar" aria-hidden="true"></i></a>
                   </span>
                 </div>
               </td>
               <td>
                 <div class="input-group date-picker">
-                  <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt1" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
-                  <span class="input-group-addon">
-                    <a ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></a>
+                  <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt1" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                  <span class="input-group-addon" ng-click="open2()">
+                    <a><i class="fa fa-calendar" aria-hidden="true"></i></a>
                   </span>
                 </div>
               </td>
               <td>
-                <button type="button" class="btn btn-primary custom-button">Create</button>
+                <span ng-if="remove">
+                    <button type="button" class="btn btn-primary custom-button">Remove</button>
+                </span>
+                <span ng-if="!remove">
+                    <button type="button" class="btn btn-primary custom-button">Create</button>
+                </span>
               </td>
             </tr>
-          </tbody>
-        </table>
+            </tbody>
+          </table>
+      </div>
+    </div>
 
-        <table class="table table-hover edit-table">
+    <div class="card cricket-card">
+      <div class="card-body">
+        <div class="card-title">
+          Cricket
+          <span class="pull-right">
+            <span class="input-group">
+              <input type="text" class="form-control"/>
+              <span class="input-group-addon"><i class="fa fa-search"></i></span>
+            </span>
+          </span>
+          <h5>
+            Here you can Add, Update or Delete Cricket match records.
+          </h5>
+        </div>
+        <div class="row create-button">
+          <div class="col-xs-12 col-md-6">
+            <button type="button" ng-click="createNewCricket()" class="btn btn-primary pull-left">Create New</button>
+          </div>
+          <div class="col-xs-12 col-md-6">
+            <ul uib-pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize"
+                class="pagination-md pull-right" boundary-links="true" force-ellipses="true">
+            </ul>
+          </div>
+        </div>
+
+        <table class="table table-hover create-table">
           <thead>
             <tr>
-              <th></th>
               <th>Home</th>
               <th>Against</th>
               <th>Stadium</th>
               <th>City</th>
               <th>Country</th>
-              <th>#</th>
-              <th>Type</th>
+              <th>Match</th>
               <th>Series</th>
               <th>From</th>
               <th>To</th>
@@ -101,72 +121,135 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" value="">
-                    <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                  </label>
-                </div>
-              </td>
-              <td>
-                <select class="form-control">
-                  <option>IND</option>
-                </select>
-              </td>
-              <td>
-                <select class="form-control">
-                  <option>AUS</option>
-                </select>
-              </td>
-              <td><input type="text" class="form-control"/></td>
-              <td><input type="text" class="cricket-city form-control"/></td>
-              <td>
-                <select class="form-control">
-                  <option>IND</option>
-                </select>
-              </td>
-              <td><input type="number" class="match-number form-control"/></td>
-              <td>
-                <select class="form-control">
-                  <option>Test</option>
-                </select>
-              </td>
-              <td>
-                <select class="form-control">
-                  <option>Sri Lanka in India</option>
-                </select>
-              </td>
-              <td>
-                <div class="input-group date-picker">
-                  <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt1" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
-                  <span class="input-group-addon">
-                    <a ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></a>
-                  </span>
-                </div>
-              </td>
-              <td>
-                <div class="input-group date-picker">
-                  <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
-                  <span class="input-group-addon">
-                    <a ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></a>
-                  </span>
-                </div>
-              </td>
-              <td>
-                <div uib-timepicker ng-model="mytime" ng-change="changed()" show-spinners="false"></div>
-              </td>
-              <td>
-                <ul class="list-inline">
-                  <li><a href="#" class="btn"><i class="fa fa-refresh" aria-hidden="true"></i></a></li>
-                  <li><a href="#" class="btn"><i class="fa fa-trash" aria-hidden="true"></i></a></li>
-                </ul>
-              </td>
+            <tr ng-repeat="cricket in cricketList">
+              <td>{{ cricket.home }}</td>
+              <td>{{ cricket.against }}</td>
+              <td>{{ cricket.stadium }}</td>
+              <td>{{ cricket.city }}</td>
+              <td>{{ cricket.country }}</td>
+              <td>{{ cricket.match }} {{ cricket.type }}</td>
+              <td>{{ cricket.series }}</td>
+              <td>{{ cricket.from }}</td>
+              <td>{{ cricket.to }}</td>
+              <td>{{ cricket.time }}</td>
+              <td><a href="" class="btn" ng-click="open(cricket)"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
   </div>
+
+
 </div>
+
+<script type="text/ng-template" id="myModalContent.html">
+  <div class="modal-header">
+    <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
+  </div>
+  <div class="modal-body" id="modal-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="home">Home:</label>
+          <select id="home" ng-model="paramData.home" class="form-control">
+            <option ng-repeat="homes in paramData.homeList" ng-selected="homes == paramData.home">{{ homes }}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="against">Against:</label>
+          <select id="against" ng-model="paramData.against" class="form-control">
+            <option ng-repeat="againstTeam in paramData.againstList" ng-selected="againstTeam == paramData.against">{{ againstTeam }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="form-group">
+          <label for="stadium">Stadium:</label>
+          <input type="text" id="stadium" ng-model="paramData.stadium" class="form-control"/>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="city">City:</label>
+          <input type="text" id="city" ng-model="paramData.city" class="form-control"/>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="country">Country:</label>
+          <select id="country" ng-model="paramData.country" class="form-control">
+            <option ng-repeat="allCountries in paramData.countryList" ng-selected="allCountries == paramData.country">{{ allCountries }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="match_number">Match Number:</label>
+          <input type="text" id="match_number" ng-model="paramData.match" class="form-control"/>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="match_type">Country:</label>
+          <select id="match_type" ng-model="paramData.type" class="form-control">
+            <option ng-repeat="matchType in paramData.matchTypeList" ng-selected="matchType == paramData.type">{{ matchType }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-8">
+        <div class="form-group">
+          <label for="series">Series:</label>
+          <select id="series" ng-model="paramData.series" class="form-control">
+            <option ng-repeat="seriesName in paramData.seriesList" ng-selected="seriesName == paramData.series">{{ seriesName }}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="form-group">
+          <label for="time">Match Time:</label>
+          <div id="time" uib-timepicker ng-model="paramData.time" ng-change="changed()" show-spinners="false"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <div class="form-group">
+          <label for="from_date">From</label>
+          <div class="input-group date-picker">
+            <input id="from_date" type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="paramData.from" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+            <span class="input-group-addon" ng-click="open1()">
+                <a><i class="fa fa-calendar" aria-hidden="true"></i></a>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <div class="form-group">
+          <label for="to_date">From</label>
+          <div class="input-group date-picker">
+            <input id="to_date" type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="paramData.to" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+            <span class="input-group-addon" ng-click="open2()">
+                <a><i class="fa fa-calendar" aria-hidden="true"></i></a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-danger pull-left" type="button" ng-click="delete()">Delete</button>
+    <button class="btn btn-primary" type="button" ng-click="ok(paramData)">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+  </div>
+</script>
