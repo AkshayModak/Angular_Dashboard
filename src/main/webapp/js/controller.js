@@ -246,16 +246,6 @@ myApp.controller("cricketController", function($scope, $uibModal, $log, $documen
         }
       ]
 
-
-
-
-
-
-
-
-
-
-
       var $ctrl = this;
         $ctrl.items = ['item1', 'item2', 'item3'];
 
@@ -279,17 +269,10 @@ myApp.controller("cricketController", function($scope, $uibModal, $log, $documen
             }
           });
         };
+});
 
-
-
-
-
-
-
-
-
-
-
+myApp.controller("inboxController", function($scope) {
+		$scope.showMessage = false;
 });
 
 myApp.controller('ModalInstanceCtrl', function ($uibModalInstance, $uibModalStack, items, $scope) {
@@ -321,5 +304,9 @@ myApp.config(function($routeProvider) {
     })
     .when("/blue", {
         templateUrl : "blue.htm"
+    })
+    .when("/inbox", {
+        controller: "inboxController",
+        templateUrl : "includes/inbox.html"
     });
 });

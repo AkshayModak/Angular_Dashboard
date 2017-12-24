@@ -4,11 +4,37 @@ html, body {
     background-color: #E7EBEE !important;
     height: 100%;
     margin: 0;
+    /*background: url("../images/background6.jpg") no-repeat center center fixed;;*/
+    background-size: cover;
+}
+
+.row {
+		margin: 0;
+}
+
+.display-block {
+		display: block;
+}
+
+.display-hidden {
+		display: none;
+}
+
+.no-shadow {
+		box-shadow: none !important;
+}
+
+.border-zero {
+		border: 0 !important;
 }
 
 .footer,
 .push {
   height: 50px;
+}
+
+.padding-zero {
+		padding: 0;
 }
 
 /* navbar styles */
@@ -21,7 +47,8 @@ html, body {
 }
 
 .bg-navbar {
-    background-color: #061B21 !important;
+    /*background-color: #161616 !important;*/
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .9);
     color: #777;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
     width: calc(100% - 260px);
@@ -46,15 +73,15 @@ html, body {
     position: fixed;
     height: 100%;
     top: 0;
-    background-image: url("../images/sidebar-background3.jpeg");
+    /*background-image: url("../images/sidebar-background3.jpeg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;*/
 }
 
 #side-bar > ul {
     width: 260px;
     height: 100%;
-    box-shadow: inset 0 0 0 1000px rgba(0, 23, 28, .7);
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .9);
 }
 
 #side-bar > ul > li.brand-name {
@@ -198,15 +225,15 @@ html, body {
 
 .card {
 		background-color: white;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     border-radius: 12px 12px 12px 12px;
     border: 0;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 .card-body > .card-title {
 	font-size: 22px;
-	background-color: #061B21;
-	color: white;
+	background-color: white;
+	color: black;
 	padding: 15px;
 }
 
@@ -321,7 +348,7 @@ html, body {
 .cricket-card > .card-body > .card-title {
 		padding: 22px;
 		border-bottom: 1px solid #efefef;
-		background-color: white;
+		/*background-color: white;*/
 		color: black;
 		font-size: 20px;
 }
@@ -438,4 +465,150 @@ html, body {
 
 .breadcrumb > li > a {
 		color: black;
+}
+
+.inbox-card {
+		min-height: 200px;
+}
+
+.inbox-card > div {
+		margin: 20px;
+}
+
+.inbox-card > div:nth-child(2) {
+		margin-left: 0;
+		margin-right: 0;
+		padding-left: 0;
+		padding-right: 0;
+}
+
+.inbox-card > div:nth-child(2) > div {
+		border-top-right-radius: 0;
+		border-top-left-radius: 0;
+		border-bottom-right-radius: 0;
+		border-bottom-left-radius: 0;
+		min-height: 150px;
+		color: white;
+		background-color: #633E89;
+		box-shadow: none;
+}
+
+.inbox-card > div:nth-child(2) > div > div.card-body > div.card-title {
+		font-size: 16px;
+		color: white;
+		border-bottom: 1px solid #efefef;
+		padding: 10px;
+		text-align: left;
+		background-color: #633E89;
+}
+
+.inbox-card > div:nth-child(2) > div > div.card-body > div.card-title > span.email-time {
+		float: right;
+}
+
+.inbox-card > div:nth-child(2) > div > div.card-body > div.inbox-subject {
+		font-size: 14px;
+		border-bottom: 0;
+		text-align: left;
+		padding: 10px;
+		font-weight: bold;
+}
+
+.inbox-card > div:nth-child(2) > div > div.card-body > div.inbox-body {
+		padding: 10px;
+		font-size: 12px;
+		text-align: left;
+		padding: 10px;
+		padding-bottom: 20px;
+}
+
+.email-message > p {
+		color: white;
+		text-align: left;
+		padding: 20px;
+}
+
+.no-padding {
+		padding: 0 !important;
+}
+
+.email-card {
+		padding: 0;
+		border-radius: 0;
+		box-shadow: none;
+		overflow-y: scroll;
+		overflow-x:hidden;
+		max-height:calc(100% - 130px);
+}
+
+.email-card > .card-body > .card-title {
+		padding: 22px;
+		border-bottom: 1px solid #efefef;
+		/*background-color: white;*/
+		color: black;
+		font-size: 20px;
+}
+
+.email-card > .card-body:hover {
+		background-color: #efefef;
+		cursor: pointer;
+}
+
+.email-card > div > div > div > ul {
+		margin-top: 30px;
+}
+
+.email-checkbox > label {
+		padding:0;
+		padding-top: 20px;
+}
+
+.email-checkbox {
+		padding-left: 35px;
+}
+
+.email-card > div.card-body > div.row > div:nth-child(2) {
+		padding-top: 15px;
+		padding-bottom: 15px;
+}
+
+.email-message {
+		min-height: 500px;
+		color: black;
+}
+
+.email-message > p {
+		color: black;
+}
+
+.email-message > p:nth-child(2) > textarea {
+		width: 100%;
+}
+
+.email-message-title {
+		height: 90px !important;
+		border-bottom: 1px solid white !important;
+}
+
+.email-message-title > img {
+		width: 50px;
+		height: 50px;
+}
+
+.email-btn {
+		margin-left: 20px;
+}
+
+.email-btn > li > button {
+		margin-right: 5px;
+}
+
+.no-message {
+		text-align: center;
+		margin-top: calc(100% - 75%);
+}
+
+.no-message > i {
+		font-size: 20em;
+		color: lightgrey;
 }
