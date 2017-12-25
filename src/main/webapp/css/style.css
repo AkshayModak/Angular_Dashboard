@@ -612,3 +612,12 @@ html, body {
 		font-size: 20em;
 		color: lightgrey;
 }
+
+.message-search > div > div > input.form-control {
+		border-top-left-radius: 20px !important;
+		border-bottom-left-radius: 20px !important;
+}
+
+.message-search {
+		padding: 10px;
+}
