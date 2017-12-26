@@ -1,0 +1,141 @@
+<div class="row">
+  <div class="col-md-2 padding-zero">
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+      <li>Content</li>
+      <li class="active">Images</li>
+    </ol>
+  </div>
+  <div class="col-md-10 message-search">
+    <div class="col-md-offset-8 col-md-2 padding-zero">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="search...."/>
+        <span class="input-group-addon" id="basic-addon2"><i class="fa fa-search" aria-hidden="true"></i></span>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <button type="button" class="btn btn-primary" ng-click="open('')">Upload new Image</button>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-md-4">
+      <div class="thumbnail">
+        <img src="images/sidebar-background.jpg" alt="..." class="col">
+        <div class="caption" style="max-width: 487px;">
+          <p><strong>Alt:</strong> This is image Alt.
+            <button type="button" class="btn btn-link pull-right"><i class="fa fa-trash fa-2x"></i></button></p>
+          <p style="word-wrap: break-word;"><strong>Image Description: </strong>This is a demo description for testing purpose, Also testing long desription.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <div class="thumbnail">
+        <img src="images/sidebar-background1.jpg" alt="..." class="col">
+        <div class="caption" style="max-width: 487px;">
+          <p><strong>Alt:</strong> This is image Alt.
+            <button type="button" class="btn btn-link pull-right"><i class="fa fa-trash fa-2x"></i></button></p>
+          <p style="word-wrap: break-word;"><strong>Image Description: </strong>This is a demo description for testing purpose, Also testing long desription.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <div class="thumbnail">
+        <img src="images/sidebar-background2.jpg" alt="..." class="col">
+        <div class="caption" style="max-width: 487px;">
+          <p><strong>Alt:</strong> This is image Alt.
+            <button type="button" class="btn btn-link pull-right"><i class="fa fa-trash fa-2x"></i></button></p>
+          <p style="word-wrap: break-word;"><strong>Image Description: </strong>This is a demo description for testing purpose, Also testing long desription.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <div class="thumbnail">
+        <img src="images/sidebar-background3.jpeg" alt="..." class="col">
+        <div class="caption" style="max-width: 487px;">
+          <p><strong>Alt:</strong> This is image Alt.
+            <button type="button" class="btn btn-link pull-right"><i class="fa fa-trash fa-2x"></i></button></p>
+          <p style="word-wrap: break-word;"><strong>Image Description: </strong>This is a demo description for testing purpose, Also testing long desription.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <div class="thumbnail">
+        <img src="images/sidebar-background.jpg" alt="..." class="col">
+        <div class="caption" style="max-width: 487px;">
+          <p><strong>Alt:</strong> This is image Alt.
+            <button type="button" class="btn btn-link pull-right"><i class="fa fa-trash fa-2x"></i></button></p>
+          <p style="word-wrap: break-word;"><strong>Image Description: </strong>This is a demo description for testing purpose, Also testing long desription.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <div class="thumbnail">
+        <img src="images/sidebar-background.jpg" alt="..." class="col">
+        <div class="caption" style="max-width: 487px;">
+          <p><strong>Alt:</strong> This is image Alt.
+            <button type="button" class="btn btn-link pull-right"><i class="fa fa-trash fa-2x"></i></button></p>
+          <p style="word-wrap: break-word;"><strong>Image Description: </strong>This is a demo description for testing purpose, Also testing long desription.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <div class="thumbnail">
+        <img src="images/sidebar-background.jpg" alt="..." class="col">
+        <div class="caption" style="max-width: 487px;">
+          <p><strong>Alt:</strong> This is image Alt.
+            <button type="button" class="btn btn-link pull-right"><i class="fa fa-trash fa-2x"></i></button></p>
+          <p style="word-wrap: break-word;"><strong>Image Description: </strong>This is a demo description for testing purpose, Also testing long desription.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <div class="thumbnail">
+        <img src="images/sidebar-background.jpg" alt="..." class="col">
+        <div class="caption" style="max-width: 487px;">
+          <p><strong>Alt:</strong> This is image Alt.
+            <button type="button" class="btn btn-link pull-right"><i class="fa fa-trash fa-2x"></i></button></p>
+          <p style="word-wrap: break-word;"><strong>Image Description: </strong>This is a demo description for testing purpose, Also testing long desription.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script type="text/ng-template" id="myModalContent.html">
+  <div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Upload New Image</h3>
+  </div>
+  <div class="modal-body" id="modal-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="alt">Alt:</label>
+          <input type="text" class="form-control" id="alt"/>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <input type="text" class="form-control" id="description"/>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <label class="btn-bs-file btn btn-primary">
+          <i class="fa fa-upload" aria-hidden="true"></i> Upload New Image
+          <input type="file" />
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-danger pull-left" type="button" ng-click="delete()">Delete</button>
+    <button class="btn btn-primary" type="button" ng-click="ok(paramData)">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+  </div>
+</script>

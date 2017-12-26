@@ -4,8 +4,15 @@ html, body {
     background-color: #E7EBEE !important;
     height: 100%;
     margin: 0;
-    /*background: url("../images/background6.jpg") no-repeat center center fixed;;*/
-    background-size: cover;
+    box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+  font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
 .row {
@@ -28,7 +35,6 @@ html, body {
 		border: 0 !important;
 }
 
-.footer,
 .push {
   height: 50px;
 }
@@ -620,4 +626,46 @@ html, body {
 
 .message-search {
 		padding: 10px;
+}
+
+#footer
+{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    color: white;
+    background-color: #161717;
+    text-align: center;
+    z-index: 999;
+    margin-top: 10px;
+}
+
+.image-row {
+	/* column width */
+	-moz-column-width: 19em;
+	-webkit-column-width: 19em;
+
+	/* space between columns */
+	-moz-column-gap: 1em;
+	-webkit-column-gap: 1em;
+}
+
+.col {
+    height: 325px !important;
+}
+
+.btn-bs-file{
+    position:relative;
+}
+.btn-bs-file input[type="file"]{
+    position: absolute;
+    top: -9999999;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    width:0;
+    height:0;
+    outline: none;
+    cursor: inherit;
 }

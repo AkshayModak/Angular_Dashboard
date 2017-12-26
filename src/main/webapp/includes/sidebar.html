@@ -9,17 +9,25 @@
       class="fa fa-bar-chart" aria-hidden="true"></i> <span>Graphs</span></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link nav-dropdown" ng-class="showNavDropdown ? 'shade-grey' : ''" ng-click="showNavDropdown = !showNavDropdown">
+    <a class="nav-link nav-dropdown" ng-class="showNavDropdown ? 'shade-grey' : ''" ng-click="showTableDropdown = !showTableDropdown">
       <i class="fa fa-table" aria-hidden="true"></i> <span>Tables <i class="fa fa-caret-down" aria-hidden="true"></i></span>
     </a>
-    <ul class="list-unstyled" ng-class="showNavDropdown ? 'active-dropdown' : 'deactive-dropdown'">
+    <ul class="list-unstyled" ng-class="showTableDropdown ? 'active-dropdown' : 'deactive-dropdown'">
       <li><a class="nav-dropdown text-center" href="#!cricket"><span>Cricket</span></a></li>
       <li><a class="nav-dropdown text-center" href="#"><span>Formula 1</span></a></li>
       <li><a class="nav-dropdown text-center" href="#"><span>Fantasy Cricket</span></a></li>
       <li><a class="nav-dropdown text-center" href="#"><span>Movies</span></a></li>
     </ul>
   </li>
-  <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-newspaper-o" aria-hidden="true"></i>
-    <span>Content</span></a>
+  <li>
+    <a class="nav-link nav-dropdown" ng-class="showNavDropdown ? 'shade-grey' : ''" ng-click="showNavDropdown = !showNavDropdown">
+      <i class="fa fa-newspaper-o" aria-hidden="true"></i> <span>Content <i class="fa fa-caret-down" aria-hidden="true"></i></span>
+    </a>
+    <ul class="list-unstyled" ng-class="showNavDropdown ? 'active-dropdown' : 'deactive-dropdown'">
+      <li ng-click="route('image')"><a class="nav-dropdown text-center"><span>Images</span></a></li>
+      <li><a class="nav-dropdown text-center" href="#"><span>Home Page</span></a></li>
+      <li><a class="nav-dropdown text-center" href="#"><span>Page 1</span></a></li>
+      <li><a class="nav-dropdown text-center" href="#"><span>Page 2</span></a></li>
+    </ul>
   </li>
 </ul>

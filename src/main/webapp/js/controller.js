@@ -77,8 +77,11 @@ var numberLoader = function() {
     });
 }
 
-myApp.controller("sidebarController", function($scope) {
+myApp.controller("sidebarController", function($scope, $location) {
     $scope.showNavDropdown = false;
+    $scope.route = function ( path ) {
+      $location.path( path );
+    };
 });
 
 myApp.controller("navbarController", function($scope) {
@@ -275,6 +278,29 @@ myApp.controller("inboxController", function($scope) {
 		$scope.showMessage = false;
 });
 
+myApp.controller("imageController", function($scope, $uibModal) {
+		$scope.showMessage = false;
+		animationsEnabled = true;
+		$scope.open = function (_cricket) {
+        console.log(_cricket);
+        paramList = [
+            { params: _cricket, requestName: "requestname" }
+        ];
+        var modalInstance = $uibModal.open({
+            animation: animationsEnabled,
+            ariaLabelledBy: 'modal-title',
+            ariaDescribedBy: 'modal-body',
+            templateUrl: 'myModalContent.html',
+            controller: 'ModalInstanceCtrl',
+            resolve: {
+                items: function () {
+                    return paramList;
+                },
+            }
+        });
+    };
+});
+
 myApp.controller('ModalInstanceCtrl', function ($uibModalInstance, $uibModalStack, items, $scope) {
 		$scope.paramData = items[0].params;
 
@@ -302,8 +328,9 @@ myApp.config(function($routeProvider) {
         controller: "moviesController",
         templateUrl : "includes/movies.html"
     })
-    .when("/blue", {
-        templateUrl : "blue.htm"
+    .when("/image", {
+        controller: "imageController",
+        templateUrl : "includes/image.html"
     })
     .when("/inbox", {
         controller: "inboxController",
