@@ -5,11 +5,11 @@
 <div ng-controller="cricketController">
   <div class="container-fluid">
     <div class="card cricket-card">
+      <div class="dashboard-card-header" style="background: #242a3c !important">
+        Series
+        <h5>Here You can Add or Update Cricket Series.</h5>
+      </div>
       <div class="card-body">
-        <div class="card-title">
-          Series
-          <h5>Here You can Add or Update Cricket Series.</h5>
-        </div>
         <table class="table create-table">
             <thead>
             <tr>
@@ -78,20 +78,20 @@
       </div>
     </div>
 
-    <div class="card cricket-card">
-      <div class="card-body">
-        <div class="card-title">
-          Cricket
-          <span class="pull-right">
+    <div class="card cricket-card" style="margin-top: 50px;">
+      <div class="dashboard-card-header" style="background: #242a3c !important">
+        Cricket
+        <span class="pull-right">
             <span class="input-group">
               <input type="text" class="form-control"/>
               <span class="input-group-addon"><i class="fa fa-search"></i></span>
             </span>
           </span>
-          <h5>
-            Here you can Add, Update or Delete Cricket match records.
-          </h5>
-        </div>
+        <h5>
+          Here you can Add, Update or Delete Cricket match records.
+        </h5>
+      </div>
+      <div class="card-body">
         <div class="row create-button">
           <div class="col-xs-12 col-md-6">
             <button type="button" ng-click="createNewCricket()" class="btn btn-primary pull-left">Create New</button>

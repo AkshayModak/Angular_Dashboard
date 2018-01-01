@@ -18,17 +18,20 @@
         <script src="js/ui-bootstrap.min.js"></script>
         <script src="js/ui-bootstrap-tpls.min.js"></script>
         <script src="js/controller.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Crafty+Girls|Patrick+Hand|Shadows+Into+Light+Two" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
     </head>
     <body>
-      <div id="wrapper">
-        <div class="navbar-wrapper" ng-controller="navbarController" ng-include="'includes/navbar.html'"></div>
-        <div ng-include="'includes/sidebar.html'" id="side-bar"></div>
-        <div id="content" style="display: inline-flex">
+      <div class="navbar-wrapper" ng-controller="navbarController" ng-include="'includes/navbar.html'"></div>
+      <div class="row">
+        <div class="col-md-2 padding-zero hidden-sm hidden-xs" ng-include="'includes/sidebar.html'" id="side-bar"></div>
+        <div id="content" class="col-xs-12 col-md-10">
           <div ng-view></div>
         </div>
-        <!--<div class="footer" id="footer">
-          <p>Footer</p>
-        </div>-->
+      </div>
+
+      <div id="footer">
+        Footer
       </div>
     </body>
 </html>

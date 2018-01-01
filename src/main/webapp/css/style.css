@@ -1,10 +1,16 @@
 @CHARSET "UTF-8";
 
 html, body {
-    background-color: #E7EBEE !important;
+    background-color: #EDEDEE !important;
     height: 100%;
     margin: 0;
     box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 body {
@@ -24,7 +30,7 @@ body {
 }
 
 .display-hidden {
-		display: none;
+		display: none !important;
 }
 
 .no-shadow {
@@ -53,47 +59,48 @@ body {
 }
 
 .bg-navbar {
-    /*background-color: #161616 !important;*/
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .9);
-    color: #777;
+    background-color: #242a3c !important;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
-    width: calc(100% - 260px);
-    float: right;
     position: fixed;
     z-index: 999;
-    right: auto !important;
-    left: auto !important;
     height: 56px;
+}
+
+.navbar-brand {
+		color: white !important;
+		padding-left: 40px;
+		padding-top: 20px;
+		font-size: 32px;
+		/*font-family: 'Shadows Into Light Two', cursive;*/
+    font-family: 'Crafty Girls', cursive;
+}
+
+.navbar-default .navbar-nav > li > a {
+		color: white !important;
 }
 
 .navbar-wrapper {
 	padding-bottom: 40px;
-	width: calc(100% - 260px);
 	float: right;
 }
 
 /* side-bar styles */
 
 #side-bar {
-    width: 260px;
     position: fixed;
+    width: 14%;
     height: 100%;
     top: 0;
-    /*background-image: url("../images/sidebar-background3.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;*/
 }
 
 #side-bar > ul {
-    width: 260px;
     height: 100%;
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .9);
+    /*box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .9);*/
+    background: #242a3c;
 }
 
 #side-bar > ul > li.brand-name {
     height: 56px;
-    width: 260px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     text-align: center;
     padding: 5px;
     font-size: 30px;
@@ -104,15 +111,13 @@ body {
     padding-top: 50px;
 }
 
-.nav {
-    display: inline-block;
-}
-
 #side-bar > ul > li > a {
     color: white;
     margin-right: 10px;
     margin-left: 10px;
     border-radius: 5px 5px 5px 5px;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 20px;
 }
 
 #side-bar > ul > li > a > i {
@@ -124,7 +129,8 @@ body {
 }
 
 #side-bar > ul > li > a:hover {
-    background-color: rgba(999, 999, 999, .3);
+    background-color: white;
+    color: black;
     margin-right: 10px;
     margin-left: 10px;
     transition:.5s;
@@ -192,10 +198,13 @@ body {
 .active-dropdown > li > a {
 	text-decoration: none;
 	color: white;
+	font-family: 'Patrick Hand', cursive;
+  font-size: 16px;
 }
 
 .active-dropdown > li:hover {
-	background-color: rgba(999, 999, 999, .3) !important;
+	background-color: white;
+	color: black;
 }
 
 .deactive-dropdown {
@@ -209,31 +218,39 @@ body {
 	border-bottom-left-radius: 0 !important;
 	border-top-right-radius: 5px !important;
 	border-top-left-radius: 5px !important;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+
+.shade-grey:hover, .active-dropdown > li:hover {
+		background-color: white !important;
+}
+
+.active-dropdown > li:hover > a {
+		color: black;
 }
 
 .nav-dropdown {
 	line-height: 40px;
 	box-shadow: none !important;
 	cursor: pointer;
+	color: white;
 }
 
 /* WebSite Content */
 #content {
     float: right;
-    width: calc(100% - 260px);
-    padding-top: 22px;
-}
-
-#wrapper {
-		min-height: 100%;
-    margin: 0 auto -50px;
+    padding-top: 50px;
+    padding-right: 9px;
+    padding-left: 9px;
+    width: 86.33%;
+    min-height: 100%;
 }
 
 .card {
 		background-color: white;
-    border-radius: 12px 12px 12px 12px;
-    border: 0;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border-radius: 3px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
 }
 
 .card-body > .card-title {
@@ -245,27 +262,14 @@ body {
 
 .card-info {
     min-height: 270px;
+    position: relative;
+    margin: 25px 0;
+    display: inline-block;
+    width: 100%;
 }
 
 .card-info > .card-body {
     padding: 0;
-}
-
-.card-body > div:nth-child(2) {
-    width: 100%;
-    height: 12px;
-    border-bottom: 1px solid rgba(111, 111, 111, .5);
-    text-align: center;
-}
-
-.card-body > div:nth-child(2) > span {
-    background-color: white;
-    padding: 0 8px;
-    border: 1px solid rgba(111, 111, 111, .5);
-    border-radius: 90px;
-    padding: 5px;
-    padding-left: 11px;
-    padding-right: 11px;
 }
 
 .dashboard {
@@ -281,33 +285,26 @@ body {
     padding: 29px;
 }
 
-.info-count > span.main-info {
-		position: absolute;
+h1.main-info {
+		/*position: absolute;
     left: 25%;
     top: 70%;
     -webkit-transform: translate(-40%, -40%);
     transform: translate(-40%, -40%);
-    font-size: 40px;
+    font-size: 40px;*/
+    margin-top: 20px;
+    text-align: center;
+		font-family: 'Cabin', sans-serif;
 }
 
-.info-count > span.secondary-info-one {
-		position: absolute;
-    left: 85%;
-    top: 68%;
-    -webkit-transform: translate(-40%, -40%);
-    transform: translate(-40%, -40%);
-    font-size: 15px;
-    width: 100%;
+h1.main-info > strong {
+		font-size: 20px;
 }
 
-.info-count > span.secondary-info-two {
-		position: absolute;
-    left: 85%;
-    top: 75%;
-    -webkit-transform: translate(-40%, -40%);
-    transform: translate(-40%, -40%);
-    font-size: 15px;
-    width: 100%;
+h4.secondary-info-two {
+    text-align: center;
+    padding: 10px;
+    font-family: 'Cabin', sans-serif;
 }
 
 .table-half {
@@ -349,14 +346,8 @@ body {
 .cricket-card {
 		padding: 0;
 		border-radius: 0;
-}
-
-.cricket-card > .card-body > .card-title {
-		padding: 22px;
-		border-bottom: 1px solid #efefef;
-		/*background-color: white;*/
-		color: black;
-		font-size: 20px;
+		width: 100%;
+		display: inline-block;
 }
 
 .match-number {
@@ -372,7 +363,8 @@ body {
 }
 
 .dashboard-tables {
-		height: 600px;
+		display: inline-block;
+		width: 100%;
 }
 
 
@@ -544,7 +536,7 @@ body {
 		box-shadow: none;
 		overflow-y: scroll;
 		overflow-x:hidden;
-		max-height:calc(100% - 130px);
+		max-height:calc(100% - 100px);
 }
 
 .email-card > .card-body > .card-title {
@@ -628,18 +620,16 @@ body {
 		padding: 10px;
 }
 
-#footer
-{
-    position: fixed;
+#footer {
     right: 0;
     bottom: 0;
     left: 0;
     padding: 1rem;
-    color: white;
-    background-color: #161717;
+    background-color: #efefef;
     text-align: center;
-    z-index: 999;
-    margin-top: 10px;
+    background-color: #242a3c;
+    margin-top: 5px;
+    color: white;
 }
 
 .image-row {
@@ -668,4 +658,28 @@ body {
     height:0;
     outline: none;
     cursor: inherit;
+}
+
+.dashboard-card-header {
+		margin: -20px 15px 20px;
+		border-radius: 3px;
+		padding: 20px;
+		font-size: 20px;
+		background: linear-gradient(60deg, #ab47bc, #8e24aa) !important;
+		color: #FFFFFF;
+		box-shadow: 0 12px 20px -10px rgba(156, 39, 176, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(156, 39, 176, 0.2);
+		font-family: 'Patrick Hand', cursive;
+}
+
+.dashboard-card-header > h5 {
+		font-size: 16px;
+}
+
+.navbar-right > ul {
+		padding-right: 20px;
+}
+
+table {
+		font-family: 'Cabin', sans-serif;
+		margin-bottom : 0 !important;
 }

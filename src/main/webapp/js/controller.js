@@ -124,7 +124,7 @@ myApp.controller("dashboardController", function($scope, $rootScope, $timeout) {
          "caption": "Total Visits",
          "subCaption": "per page",
          "yAxisName": "Unique Visits",
-         "paletteColors": "#0075c2",
+         "paletteColors": "#242a3c",
          "bgColor": "#ffffff",
          "borderAlpha": "20",
          "canvasBorderAlpha": "0",
@@ -158,6 +158,252 @@ myApp.controller("dashboardController", function($scope, $rootScope, $timeout) {
          value: "47"
      }]
    }
+
+
+	 //info-card 1 graph
+   $scope.myDataSource1 = {
+        chart: {
+            /*caption: "Harry's SuperMart",
+            subCaption: "Top 5 stores in last month by revenue",
+            numberPrefix: "$",
+            theme: "fint"*/
+            "paletteColors": "#242a3c",
+            "bgColor": "#ffffff",
+            "borderAlpha": "0",
+            "canvasBorderAlpha": "0",
+            "usePlotGradientColor": "0",
+            "plotBorderAlpha": "0",
+            "placevaluesInside": "0",
+            "rotatevalues": "0",
+            "valueFontColor": "#242a3c",
+            "showXAxisLine": "0",
+            "xAxisLineColor": "#ffffff",
+            "divlineColor": "#ffffff",
+            "divLineIsDashed": "0",
+            "showAlternateHGridColor": "0",
+            "subcaptionFontBold": "0",
+            "subcaptionFontSize": "0"
+        },
+        data:[{
+            label: "Monday",
+            value: "100"
+        },
+        {
+            label: "Tuesday",
+            value: "56"
+        },
+        {
+            value: "70"
+        },
+        {
+            value: "70"
+        },
+        {
+            value: "70"
+        },
+        {
+            value: "70"
+        },
+        {
+            label: "",
+            value: "70"
+        },
+        {
+            label: "",
+            value: "70"
+        },
+        {
+            label: "",
+            value: "70"
+        },
+        {
+            label: "",
+            value: "47"
+        }]
+   }
+
+   $scope.myDataSource2 = {
+           chart: {
+               /*caption: "Harry's SuperMart",
+               subCaption: "Top 5 stores in last month by revenue",
+               numberPrefix: "$",
+               theme: "fint"*/
+               "paletteColors": "#242a3c",
+               "bgColor": "#ffffff",
+               "borderAlpha": "0",
+               "canvasBorderAlpha": "0",
+               "usePlotGradientColor": "0",
+               "plotBorderAlpha": "0",
+               "placevaluesInside": "0",
+               "rotatevalues": "0",
+               "valueFontColor": "#242a3c",
+               "showXAxisLine": "0",
+               "xAxisLineColor": "#ffffff",
+               "divlineColor": "#ffffff",
+               "divLineIsDashed": "0",
+               "showAlternateHGridColor": "0",
+               "subcaptionFontBold": "0",
+               "subcaptionFontSize": "0"
+           },
+           data:[{
+               label: "Monday",
+               value: "100"
+           },
+           {
+               label: "Tuesday",
+               value: "56"
+           },
+           {
+               value: "70"
+           },
+           {
+               value: "70"
+           },
+           {
+               value: "70"
+           },
+           {
+               value: "70"
+           },
+           {
+               label: "",
+               value: "70"
+           },
+           {
+               label: "",
+               value: "70"
+           },
+           {
+               label: "",
+               value: "70"
+           },
+           {
+               label: "",
+               value: "47"
+           }]
+      }
+
+      $scope.myDataSource3 = {
+              chart: {
+                  /*caption: "Harry's SuperMart",
+                  subCaption: "Top 5 stores in last month by revenue",
+                  numberPrefix: "$",
+                  theme: "fint"*/
+                  "paletteColors": "#242a3c",
+                  "bgColor": "#ffffff",
+                  "borderAlpha": "0",
+                  "canvasBorderAlpha": "0",
+                  "usePlotGradientColor": "0",
+                  "plotBorderAlpha": "0",
+                  "placevaluesInside": "0",
+                  "rotatevalues": "0",
+                  "valueFontColor": "#242a3c",
+                  "showXAxisLine": "0",
+                  "xAxisLineColor": "#ffffff",
+                  "divlineColor": "#ffffff",
+                  "divLineIsDashed": "0",
+                  "showAlternateHGridColor": "0",
+                  "subcaptionFontBold": "0",
+                  "subcaptionFontSize": "0"
+              },
+              data:[{
+                  label: "Monday",
+                  value: "100"
+              },
+              {
+                  label: "Tuesday",
+                  value: "56"
+              },
+              {
+                  value: "70"
+              },
+              {
+                  value: "70"
+              },
+              {
+                  value: "70"
+              },
+              {
+                  value: "70"
+              },
+              {
+                  label: "",
+                  value: "70"
+              },
+              {
+                  label: "",
+                  value: "70"
+              },
+              {
+                  label: "",
+                  value: "70"
+              },
+              {
+                  label: "",
+                  value: "47"
+              }]
+         }
+
+         $scope.myDataSource4 = {
+                 chart: {
+                     /*caption: "Harry's SuperMart",
+                     subCaption: "Top 5 stores in last month by revenue",
+                     numberPrefix: "$",
+                     theme: "fint"*/
+                     "paletteColors": "#242a3c",
+                     "bgColor": "#ffffff",
+                     "borderAlpha": "0",
+                     "canvasBorderAlpha": "0",
+                     "usePlotGradientColor": "0",
+                     "plotBorderAlpha": "0",
+                     "placevaluesInside": "0",
+                     "rotatevalues": "0",
+                     "valueFontColor": "#242a3c",
+                     "showXAxisLine": "0",
+                     "xAxisLineColor": "#ffffff",
+                     "divlineColor": "#ffffff",
+                     "divLineIsDashed": "0",
+                     "showAlternateHGridColor": "0",
+                     "subcaptionFontBold": "0",
+                     "subcaptionFontSize": "0"
+                 },
+                 data:[{
+                     label: "Monday",
+                     value: "100"
+                 },
+                 {
+                     label: "Tuesday",
+                     value: "56"
+                 },
+                 {
+                     value: "70"
+                 },
+                 {
+                     value: "70"
+                 },
+                 {
+                     value: "70"
+                 },
+                 {
+                     value: "70"
+                 },
+                 {
+                     label: "",
+                     value: "70"
+                 },
+                 {
+                     label: "",
+                     value: "70"
+                 },
+                 {
+                     label: "",
+                     value: "70"
+                 },
+                 {
+                     label: "",
+                     value: "47"
+                 }]
+            }
 
    $scope.visitsByCountry = {
        chart: {
