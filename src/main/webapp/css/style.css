@@ -241,7 +241,7 @@ body {
 #content {
     float: right;
     padding-top: 50px;
-    padding-right: 9px;
+    padding-right: 0;
     padding-left: 9px;
     width: 86.33%;
     min-height: 100%;

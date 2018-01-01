@@ -581,5 +581,9 @@ myApp.config(function($routeProvider) {
     .when("/inbox", {
         controller: "inboxController",
         templateUrl : "includes/inbox.html"
+    })
+    .when("/logs", {
+        controller: "logsController",
+        templateUrl : "includes/logs.html"
     });
 });
