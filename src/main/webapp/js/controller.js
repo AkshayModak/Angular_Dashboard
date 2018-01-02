@@ -1,4 +1,4 @@
-var myApp = angular.module("dashboardModule", ["chart.js", "ng-fusioncharts", "ui.bootstrap", "ngRoute", "textAngular"]);
+var myApp = angular.module("dashboardModule", ["chart.js", "ui.bootstrap", "ngRoute", "textAngular"]);
 
 /* Generic Functions */
 var datePickerFunction = function($scope) {
