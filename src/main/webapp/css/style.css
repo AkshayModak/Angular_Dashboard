@@ -206,6 +206,22 @@ body {
 	max-height: 0;
 }
 
+@media (min-width:768px) and (max-width:991px) {
+		.active-dropdown {
+    	position: fixed;
+      background-color: #242a3c;
+    }
+    .active-dropdown > li {
+        margin: 0;
+        width: 100% !important;
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+        padding-right: 7px;
+        padding-left: 7px;
+    }
+}
+
+
 .shade-grey {
 	background-color: rgba(000, 000, 000, .3) !important;
 	border-bottom-right-radius: 0 !important;
@@ -232,7 +248,7 @@ body {
 }
 
 /* WebSite Content */
-@media (min-width: 940px) {
+@media (min-width: 992px) {
 		#content {
 				width: 86.33%;
 				float: right;
@@ -248,7 +264,7 @@ body {
     }
 }
 
-@media (max-width : 939px) {
+@media (max-width : 991px) {
 		#content {
         float: right;
         padding: 0;
@@ -268,7 +284,6 @@ body {
 
     .col-xs-12 {
         padding: 0;
-        margin-top: 30px;
     }
 }
 
@@ -429,10 +444,15 @@ h4.secondary-info-two {
 
 .checkbox label input[type="checkbox"]:checked+.cr>.cr-icon {
   opacity: 1;
+  background-color: pink;
 }
 
 .checkbox label input[type="checkbox"]:disabled+.cr {
   opacity: .5;
+}
+
+.bg-red {
+		background-color: red;
 }
 
 .date-picker > span.input-group-addon {
@@ -481,9 +501,9 @@ h4.secondary-info-two {
 
 .breadcrumb {
 		background-color: transparent !important;
-		padding-top: 15px !important;
-		padding-left: 20px !important;
+		padding: 20px !important;
 		font-size: 16px;
+		margin:0;
 }
 
 .breadcrumb > li > a {
@@ -642,7 +662,7 @@ h4.secondary-info-two {
 }
 
 .message-search {
-		padding: 10px;
+		padding: 15px;
 }
 
 #footer {
@@ -739,7 +759,7 @@ legend {
 }
 
 /* Reference -- https://bootsnipp.com/snippets/featured/grid-columns-divider */
-@media ( min-width: 940px ) {
+@media ( min-width: 992px ) {
     .grid-divider {
         position: relative;
         padding: 0;
@@ -764,13 +784,20 @@ legend {
     }
 }
 
-@media (max-width: 939px) {
+@media (max-width: 991px) {
 		.grid-divider {
 				background-color: white;
 				font-family: 'Patrick Hand', cursive;
 		}
 		.col-padding {
         text-align: center;
-        padding-bottom: 40px;
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
+}
+
+@media (max-width: 445px) {
+		.hide-icon {
+				display: none;
+		}
 }

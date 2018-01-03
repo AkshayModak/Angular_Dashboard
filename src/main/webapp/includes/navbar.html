@@ -14,11 +14,11 @@
       <li><a href="#!inbox">Inbox</a></li>
       <li><a href="#!graphs">Analytics</a></li>
       <li>
-        <a class="nav-link nav-dropdown" ng-class="showTableDropdown ? 'shade-grey' : ''" ng-click="showTableDropdown = !showTableDropdown">
+        <a class="nav-link nav-dropdown" ng-click="showTableDropdown = !showTableDropdown">
           <i class="fa fa-table" aria-hidden="true"></i> <span>Tables <i class="fa fa-caret-down" aria-hidden="true"></i></span>
         </a>
-        <ul class="list-unstyled" ng-class="showTableDropdown ? 'active-dropdown' : 'deactive-dropdown'">
-          <li ng-click="route('cricket')"><a class="nav-dropdown text-center"><span>Cricket</span></a></li>
+        <ul class="list-unstyled" ng-class="showTableDropdown ? 'active-dropdown' : 'deactive-dropdown'" style="width: auto;">
+          <li><a href="#!cricket" class="nav-dropdown text-center"><span>Cricket</span></a></li>
           <li><a class="nav-dropdown text-center" href="#"><span>Formula 1</span></a></li>
           <li><a class="nav-dropdown text-center" href="#"><span>Fantasy Cricket</span></a></li>
           <li><a class="nav-dropdown text-center" href="#"><span>Movies</span></a></li>
