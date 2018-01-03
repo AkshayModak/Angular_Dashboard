@@ -292,6 +292,93 @@ myApp.controller("logsController", function($scope, $uibModal) {
 
 });
 
+myApp.controller("graphsController", function($scope) {
+
+		$scope.pieLabels = ["Android", "IOS", "Windows", "Linux", "Blackberry", "Others"];
+      $scope.pieData = ["30", "10", "47", "3", "1", "9"];
+
+    /*$scope.pieColors = [{
+        backgroundColor: 'rgb(128,54,144, 1)'
+    },
+    {
+        backgroundColor: 'rgb(0,173,249, 1)'
+    },
+    {
+        backgroundColor: '#DCDCDC'
+    },
+    {
+        backgroundColor: '#46BFBD'
+    },
+    {
+        backgroundColor: '#FDB45C'
+    },
+    {
+        backgroundColor: '#949FB1'
+    }];*/
+
+		$scope.hBarChartLabels = ['2006', '2007', '2008', '2009'];
+    $scope.hBarChartSeries = ['Series A', 'Series B'];
+
+    $scope.hBarChartData = [
+      [28, 48, 40, 19]
+    ];
+    $scope.hBarChartColor = [{
+        backgroundColor: 'rgba(36,42,60,.9)',
+        pointBackgroundColor: 'rgba(148,159,177,1)',
+        pointHoverBackgroundColor: 'rgba(148,159,177,1)',
+        borderColor: 'rgba(36,42,60,0)',
+        pointBorderColor: '#fff',
+        pointHoverBorderColor: 'rgba(148,159,177,1)'
+    }]
+
+		$scope.donutLabels = ["Australia", "India", "Canada", "USA", "South Africa"];
+    $scope.donutData = [300, 500, 100, 200, 700];
+
+		$scope.lineChartLabels = ["January", "February", "March", "April", "May", "June", "July"];
+		$scope.lineChartSeries = ['Series A', 'Series B'];
+		$scope.lineChartData = [
+		  [65, 59, 80, 81, 56, 55, 40],
+		  [28, 48, 40, 19, 86, 27, 90]
+		];
+		;
+		$scope.lineChartDatasetOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
+		$scope.lineChartOptions = {
+		  scales: {
+		    yAxes: [
+		      {
+		        id: 'y-axis-1',
+		        type: 'linear',
+		        display: true,
+		        position: 'left'
+		      },
+		      {
+		        id: 'y-axis-2',
+		        type: 'linear',
+		        display: true,
+		        position: 'right'
+		      }
+		    ]
+		  }
+		};
+
+		$scope.lineChartColor = [{
+        backgroundColor: 'rgba(36,42,60,.5)',
+        pointBackgroundColor: 'rgba(148,159,177,1)',
+        pointHoverBackgroundColor: 'rgba(148,159,177,1)',
+        borderColor: 'rgba(36,42,60,0)',
+        pointBorderColor: '#fff',
+        pointHoverBorderColor: 'rgba(148,159,177,1)'
+    },
+    {
+        backgroundColor: 'rgba(36,42,60,.5)',
+        pointBackgroundColor: 'rgba(148,159,177,1)',
+        pointHoverBackgroundColor: 'rgba(148,159,177,1)',
+        borderColor: 'rgba(36,42,60,0)',
+        pointBorderColor: '#fff',
+        pointHoverBorderColor: 'rgba(148,159,177,1)'
+    }];
+});
+
 myApp.controller('ModalInstanceCtrl', function ($uibModalInstance, $uibModalStack, items, $scope) {
 		$scope.paramData = items[0].params;
 
@@ -334,5 +421,15 @@ myApp.config(function($routeProvider) {
     .when("/content", {
         controller: "contentController",
         templateUrl : "includes/content.html"
-    });
+    })
+    .when("/graphs", {
+			  controller: "graphsController",
+			  templateUrl : "includes/graphs.html"
+		 });
 });
+
+myApp.config(function($routeProvider){
+  (function (ChartJsProvider) {
+    ChartJsProvider.setOptions({ colors : [ '#803690', '#00ADF9', '#DCDCDC', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360'] });
+  });
+})

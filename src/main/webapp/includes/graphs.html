@@ -1,0 +1,252 @@
+<div ng-controller="graphsController">
+  <div class="container-fluid">
+    <div class="row grid-divider">
+      <div class="col-xs-12 col-md-3">
+        <div class="col-padding">
+          <h4>Average Time</h4>
+          <h2>00:01:55</h2>
+          <span style="font-size: 18px;"><i class="fa fa-caret-up" style="color: #27BDBC" aria-hidden="true"></i> From 00:01:43 Yesterday</span>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-3">
+        <div class="col-padding">
+          <h4>Page Views (Today)</h4>
+          <h2>1,24,123</h2>
+          <span style="font-size: 18px;"><i class="fa fa-caret-down" style="color: #FF4749" aria-hidden="true"></i> From 1,96,123 Yesterday</span>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-3">
+        <div class="col-padding">
+          <h4>Page/Visit</h4>
+          <h2>4.43</h2>
+          <span style="font-size: 18px;"><i class="fa fa-caret-up" style="color: #27BDBC" aria-hidden="true"></i> From 3.71 Yesterday</span>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-3">
+        <div class="col-padding">
+          <h4>Bounce Rate</h4>
+          <h2>13.61%</h2>
+          <span style="font-size: 18px;"><i class="fa fa-caret-up" style="color: #27BDBC" aria-hidden="true"></i> From 29.00% Yesterday</span>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 50px;">
+      <div class="card" style="display: inline-block; width: 100%;">
+        <div class="dashboard-card-header" style="background: #242a3c !important">Line Chart</div>
+        <div class="card-body">
+          <div class="col-xs-12 col-md-8">
+          <canvas id="line" class="chart chart-line" chart-data="lineChartData" height="100px"
+                  chart-labels="lineChartLabels" chart-series="lineChartSeries" chart-options="lineChartOptions"
+                  chart-dataset-override="lineChartDatasetOverride" chart-click="onClick" chart-colors="lineChartColor">
+          </canvas>
+          </div>
+          <div class="col-xs-12 col-md-4">
+            <legend>Top Campaign Performance</legend>
+            <canvas id="base" class="chart-horizontal-bar" chart-series="hBarChartSeries" chart-data="hBarChartData" chart-colors="hBarChartColor" chart-labels="hBarChartLabels"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 50px;">
+      <div class="col-xs-12 col-md-6" style="padding-left: 0;">
+        <div class="card graph-mini-card">
+          <div class="dashboard-card-header" style="background: #242a3c !important">Visits By Countries</div>
+          <div class="card-body">
+            <div class="col-xs-12 col-md-7">
+              <legend style="border-bottom: 0; text-align: center">Visits By Countries</legend>
+              <canvas id="doughnut" class="chart chart-doughnut"
+                      chart-data="donutData" chart-labels="donutLabels">
+              </canvas>
+            </div>
+            <div class="col-xs-12 col-md-5">
+              <legend style="border-bottom: 0; text-align: center">Top 5</legend>
+              <table class="table mini-table">
+                <thead>
+                <tr>
+                  <th>Country</th>
+                  <th>No. of Visitors</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>Australia</td>
+                  <td>300</td>
+                </tr>
+                <tr>
+                  <td>India</td>
+                  <td>300</td>
+                </tr>
+                <tr>
+                  <td>Canada</td>
+                  <td>300</td>
+                </tr>
+                <tr>
+                  <td>USA</td>
+                  <td>300</td>
+                </tr>
+                <tr>
+                  <td>South Africa</td>
+                  <td>300</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6" style="padding-right: 0;">
+        <div class="card" style="display: inline-block; width: 100%; padding-bottom: 20px;">
+          <div class="dashboard-card-header" style="background: #242a3c !important">Page Visits</div>
+          <div class="card-body">
+            <div class="col-xs-12 col-md-7">
+              <legend style="border-bottom: 0; text-align: center">Page Visits</legend>
+              <canvas id="bar" class="chart chart-bar" chart-data="pieData" chart-labels="pieLabels"
+                      chart-colors="pieColor" chart-series="pieSeries" height="100%"></canvas>
+            </div>
+            <div class="col-xs-12 col-md-5">
+              <legend style="border-bottom: 0; text-align: center">Count (Top 5)</legend>
+              <table class="table mini-table">
+                <thead>
+                  <tr>
+                    <th>Page</th>
+                    <th>Hits</th>
+                    <th>Avg Time</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Home</td>
+                    <td>300</td>
+                    <td>7.2s</td>
+                  </tr>
+                  <tr>
+                    <td>Page 1</td>
+                    <td>300</td>
+                    <td>7.2s</td>
+                  </tr>
+                  <tr>
+                    <td>Page 2</td>
+                    <td>300</td>
+                    <td>7.2s</td>
+                  </tr>
+                  <tr>
+                    <td>Page 3</td>
+                    <td>300</td>
+                    <td>7.2s</td>
+                  </tr>
+                  <tr>
+                    <td>Page 4</td>
+                    <td>300</td>
+                    <td>7.2s</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 50px;">
+      <div class="col-xs-12 col-md-6" style="padding-left: 0;">
+        <div class="card graph-mini-card">
+          <div class="dashboard-card-header" style="background: #242a3c !important">Device Usage</div>
+          <div class="card-body">
+            <div class="col-xs-12 col-md-7">{{ pieColors }}
+              <legend style="border-bottom: 0; text-align: center">Device Usage(In percentage)</legend>
+              <canvas id="pie" class="chart chart-pie"
+                      chart-data="pieData" chart-labels="pieLabels" chart-options="options">
+              </canvas>
+            </div>
+            <div class="col-xs-12 col-md-5">
+              <table class="table mini-table">
+                <thead>
+                <tr>
+                  <th>Device</th>
+                  <th>Usage</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>Android</td>
+                  <td>30%</td>
+                </tr>
+                <tr>
+                  <td>IOS</td>
+                  <td>10%</td>
+                </tr>
+                <tr>
+                  <td>Windows</td>
+                  <td>47%</td>
+                </tr>
+                <tr>
+                  <td>Linux</td>
+                  <td>3%</td>
+                </tr>
+                <tr>
+                  <td>Blackberry</td>
+                  <td>1%</td>
+                </tr>
+                <tr>
+                  <td>Others</td>
+                  <td>9%</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6" style="padding-right: 0;">
+        <div class="card" style="display: inline-block; width: 100%; padding-bottom: 20px;">
+          <div class="dashboard-card-header" style="background: #242a3c !important">Page Visits</div>
+          <div class="card-body">
+            <div class="col-xs-12 col-md-7">
+              <legend style="border-bottom: 0; text-align: center">Page Visits</legend>
+              <canvas id="bar" class="chart chart-bar" chart-data="pieData" chart-labels="pieLabels"
+                      chart-colors="pieColor" chart-series="pieSeries" height="100%"></canvas>
+            </div>
+            <div class="col-xs-12 col-md-5">
+              <legend style="border-bottom: 0; text-align: center">Count (Top 5)</legend>
+              <table class="table mini-table">
+                <thead>
+                <tr>
+                  <th>Page</th>
+                  <th>Hits</th>
+                  <th>Avg Time</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>Home</td>
+                  <td>300</td>
+                  <td>7.2s</td>
+                </tr>
+                <tr>
+                  <td>Page 1</td>
+                  <td>300</td>
+                  <td>7.2s</td>
+                </tr>
+                <tr>
+                  <td>Page 2</td>
+                  <td>300</td>
+                  <td>7.2s</td>
+                </tr>
+                <tr>
+                  <td>Page 3</td>
+                  <td>300</td>
+                  <td>7.2s</td>
+                </tr>
+                <tr>
+                  <td>Page 4</td>
+                  <td>300</td>
+                  <td>7.2s</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
