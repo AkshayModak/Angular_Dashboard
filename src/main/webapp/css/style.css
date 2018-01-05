@@ -12,7 +12,7 @@ body {
   margin: 0;
   padding-bottom: 6rem;
   min-height: 100%;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: 'PT Sans', sans-serif;
 }
 
 .row {
@@ -806,7 +806,7 @@ h4.secondary-info-two {
 }
 
 table {
-		font-family: 'Cabin', sans-serif;
+		font-family: 'PT Sans', sans-serif;
 		margin-bottom : 0 !important;
 }
 
