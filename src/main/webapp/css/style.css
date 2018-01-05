@@ -252,6 +252,11 @@ body {
 		width: 400px;
 }
 
+.notification-dropdown-sm > li {
+		text-align: left;
+		padding: 5px;
+}
+
 .notifications-dropdown > li {
 		border-bottom: 1px solid #e5e5e5;
 }
@@ -805,6 +810,10 @@ h4.secondary-info-two {
 		padding-right: 20px;
 }
 
+.navbar-right > ul.visible-xs {
+		padding-right: 0;
+}
+
 table {
 		font-family: 'PT Sans', sans-serif;
 		margin-bottom : 0 !important;
@@ -894,4 +903,12 @@ legend {
 
 .giveMeEllipsis::after {
 		content: "...";
+}
+
+.navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
+		max-height: none;
+}
+
+.navbar-nav.visible-xs {
+		font-family: 'Patrick Hand', cursive;
 }
