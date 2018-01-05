@@ -92,12 +92,40 @@ myApp.controller("navbarController", function($scope) {
     $scope.isNavCollapsed = true;
     $scope.isCollapsed = false;
     $scope.isCollapsedHorizontal = false;
+    $scope.showNotifications = false;
+
+    $scope.toggleNotification = function() {
+				$scope.showNotifications = !$scope.showNotifications;
+				console.log('==$scope.showNotifications==', $scope.showNotifications);
+    }
 });
 
 myApp.controller("dashboardController", function($scope, $rootScope, $timeout) {
     $rootScope.$on('$includeContentLoaded', function() {
         numberLoader();
     });
+
+		$scope.hBarLabels = ['100GB'];
+		$scope.hBarSeries = ['Used', 'Unused'];
+
+		$scope.hBarData = [
+			[70],
+			[30]
+		];
+
+		$scope.hBarOptions= {
+		   scales: {
+		       yAxes: [{
+		           display: true
+		       }],
+		       xAxes: [{
+		          ticks: {
+                  beginAtZero: true
+              },
+		          display: true
+		       }]
+		   }
+		}
 
 	 $scope.totalItems = 64;
     $scope.currentPage = 4;

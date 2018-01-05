@@ -1,81 +1,139 @@
 <div ng-controller="dashboardController" class="dashboard">
   <div class="container-fluid">
+    <div class="row grid-divider" style="margin-bottom: 20px;">
+      <div class="col-xs-12 col-md-3">
+        <div class="col-padding">
+          <h4>Total Visits</h4>
+          <h2>2,132,123</h2>
+          <span style="font-size: 18px;"><i class="fa fa-caret-up" style="color: #27BDBC" aria-hidden="true"></i> From 2,121,456 Yesterday</span>
+          <canvas chart-colors="color" class="chart chart-bar" chart-options="options" chart-data="data"
+                  chart-labels="labels" chart-series="series" height="80px"></canvas>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-3">
+        <div class="col-padding">
+          <h4>Total Registered Users</h4>
+          <h2>50K</h2>
+          <span style="font-size: 18px;"><i class="fa fa-caret-down" style="color: #FF4749" aria-hidden="true"></i> From 52,123 Yesterday</span>
+          <canvas chart-colors="color" class="chart chart-bar" chart-options="options" chart-data="data"
+                  chart-labels="labels" chart-series="series" height="80px"></canvas>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-3">
+        <div class="col-padding">
+          <h4>Revenue (This Month)</h4>
+          <h2>5.12 M</h2>
+          <span style="font-size: 18px;"><i class="fa fa-caret-up" style="color: #27BDBC" aria-hidden="true"></i> From 3.71M Yesterday</span>
+          <canvas chart-colors="color" class="chart chart-bar" chart-options="options" chart-data="data"
+                  chart-labels="labels" chart-series="series" height="80px"></canvas>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-3">
+        <div class="col-padding">
+          <h4>Shipments (Today)</h4>
+          <h2>1,231</h2>
+          <span style="font-size: 18px;"><i class="fa fa-caret-up" style="color: #27BDBC" aria-hidden="true"></i> From 1,989 Yesterday</span>
+          <canvas chart-colors="color" class="chart chart-bar" chart-options="options" chart-data="data"
+                  chart-labels="labels" chart-series="series" height="80px"></canvas>
+        </div>
+      </div>
+    </div>
+
     <div class="row">
-      <div class="col-xs-12 col-lg-3">
-        <div class="card card-info">
-          <div class="dashboard-card-header" style="background: #242a3c !important">Visits</div>
-          <div class="card-body">
-            <div class="col-xs-12">
-              <h1 class="main-info">
-                <strong class="text-muted">Total Visits</strong></br>
-                <span>2000</span>
-              </h1>
-              <h4 class="secondary-info-two">
-                <i class="fa fa-level-up" aria-hidden="true"></i>
-                Increased By
-                <span class="count">15</span>%
-              </h4>
-              <canvas chart-colors="color" class="chart chart-bar" chart-options="options" chart-data="data"
-                      chart-labels="labels" chart-series="series" height="80px"></canvas>
+      <div class="col-xs-12 col-md-4">
+        <div class="card" style="display: inline-block; width: 100%; margin-top: 20px;">
+          <div class="dashboard-card-header" style="background: #242a3c !important">Notes</div>
+          <div class="card-body" style="height: 627px;">
+            <div class="row">
+              <div class="col-xs-12">
+                <blockquote>
+                  <h4><strong>de Finibus Bonorum et Malorum?</strong>
+                    <a><i class="fa fa-trash pull-right" aria-hidden="true"></i></a>
+                  </h4>
+                  <h6>Updated: 11, November, 2017 11:47 PM. By <a>Admin User</a></h6>
+                  <h5>Sed ut perspiciatis unde omnis iste natus... <a>Read More</a></h5>
+                </blockquote>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <blockquote>
+                  <h4><strong>de Finibus Bonorum et Malorum?</strong></h4>
+                  <h6>Updated: 11, November, 2017 11:47 PM. By <a>Admin User</a></h6>
+                  <h5>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab... <a>Read More</a></h5>
+                </blockquote>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <blockquote>
+                  <h4><strong>de Finibus Bonorum et Malorum?</strong></h4>
+                  <h6>Updated: 11, November, 2017 11:47 PM. By <a>Admin User</a></h6>
+                  <h5>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab... <a>Read More</a></h5>
+                </blockquote>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <blockquote>
+                  <h4><strong>de Finibus Bonorum et Malorum?</strong></h4>
+                  <h6>Updated: 11, November, 2017 11:47 PM. By <a>Admin User</a></h6>
+                  <h5>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab... <a>Read More</a></h5>
+                </blockquote>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-xs-12 col-lg-3">
-        <div class="card card-info">
-            <div class="dashboard-card-header" style="background: #242a3c !important;">Users</div>
+      <div class="col-xs-12 col-md-8">
+        <div class="card" style="display: inline-block; width: 100%; margin-top: 20px;">
+          <div class="dashboard-card-header" style="background: #242a3c !important">Recent Visits</div>
           <div class="card-body">
-            <div class="col-xs-12">
-              <h1 class="main-info">
-                <strong class="text-muted">Registered</strong></br>
-                <span>50K</span>
-              </h1>
-              <h4 class="secondary-info-two">
-                <i class="fa fa-users" aria-hidden="true"></i>
-                <span class="count">1811 Registered Today</span>
-              </h4>
-              <canvas chart-colors="color" class="chart chart-bar" chart-options="options" chart-data="data"
-                      chart-labels="labels" chart-series="series" height="80px"></canvas>
+            <div class="col-xs-12 col-md-8">
+              <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series"></canvas>
+            </div>
+            <div class="col-xs-12 col-md-4">
+              asdfasdf
             </div>
           </div>
         </div>
       </div>
-      <div class="col-xs-12 col-lg-3">
-        <div class="card card-info">
-          <div class="dashboard-card-header" style="background: #242a3c !important;">Revenue</div>
+      <div class="col-xs-12 col-md-4 table-half">
+        <div class="card" style="display: inline-block; width: 100%; margin-top: 20px; padding-bottom: 20px; min-height: 255px;">
+          <div class="dashboard-card-header" style="background: #242a3c !important">SSD</div>
           <div class="card-body">
-            <div class="col-xs-12">
-              <h1 class="main-info">
-                <strong class="text-muted">This Month</strong></br>
-                <span>100M</span>
-              </h1>
-              <h4 class="secondary-info-two">
-                <i class="fa fa-money" aria-hidden="true"></i>
-                Today
-                <span class="count">111K</span>
-              </h4>
-              <canvas chart-colors="color" class="chart chart-bar" chart-options="options" chart-data="data"
-                      chart-labels="labels" chart-series="series" height="80px"></canvas>
+            <div class="col-xs-7" style="padding-right: 0;">
+              <canvas id="base" class="chart-horizontal-bar" chart-data="hBarData" chart-options="hBarOptions" chart-labels="hBarLabels" ></canvas>
+            </div>
+            <div class="col-xs-5" style="padding-left: 0; padding: 29px;">
+              <dl class="dl-horizontal">
+                <dt style="width: auto;">Total</dt>
+                <dd style="margin: auto; text-align: right;">100 GB</dd>
+                <dt style="width: auto;">Used</dt>
+                <dd style="margin: auto; text-align: right;">70 GB</dd>
+                <dt style="width: auto;">Unused</dt>
+                <dd style="margin: auto; text-align: right;">30 GB</dd>
+              </dl>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-xs-12 col-lg-3">
-        <div class="card card-info">
-          <div class="dashboard-card-header" style="background: #242a3c !important;">Messages</div>
+      <div class="col-xs-12 col-md-4 table-half">
+        <div class="card" style="display: inline-block; width: 100%; margin-top: 20px; min-height: 255px;">
+          <div class="dashboard-card-header" style="background: #242a3c !important">Recent Visits</div>
           <div class="card-body">
-            <div class="col-xs-12">
-              <h1 class="main-info">
-                <strong class="text-muted">Inbox Messages</strong></br>
-                <span>486</span>
-              </h1>
-              <h4 class="secondary-info-two">
-                <i class="fa fa-inbox" aria-hidden="true"></i>
-                Unread:
-                <span class="count">15</span>
-              </h4>
-              <canvas chart-colors="color" class="chart chart-bar" chart-options="options" chart-data="data"
-                      chart-labels="labels" chart-series="series" height="80px"></canvas>
+            <div class="col-xs-7">
+              <canvas id="pie" class="chart chart-pie" chart-data="pieData" chart-labels="pieLabels"></canvas>
+            </div>
+            <div class="col-xs-5" style="padding-left: 0; padding: 29px;">
+              <dl class="dl-horizontal">
+                <dt style="width: auto;">Total</dt>
+                <dd style="margin: auto; text-align: right;">100 GB</dd>
+                <dt style="width: auto;">Used</dt>
+                <dd style="margin: auto; text-align: right;">70 GB</dd>
+                <dt style="width: auto;">Unused</dt>
+                <dd style="margin: auto; text-align: right;">30 GB</dd>
+              </dl>
             </div>
           </div>
         </div>
@@ -83,24 +141,8 @@
     </div>
 
 
-    <div class="row">
-      <div class="col-xs-12 col-md-6 table-half">
-        <div class="card" style="display: inline-block; width: 100%;">
-          <div class="dashboard-card-header" style="background: #242a3c !important">Recent Visits</div>
-          <div class="card-body">
-            <canvas id="bar" chart-colors="color" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-series="series"></canvas>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-md-6 table-half">
-        <div class="card" style="display: inline-block; width: 100%;">
-          <div class="dashboard-card-header" style="background: #242a3c !important">Recent Visits</div>
-          <div class="card-body">
-            <canvas id="pie" class="chart chart-pie" chart-data="pieData" chart-labels="pieLabels"></canvas>
-          </div>
-        </div>
-      </div>
-    </div>
+
+
 
 
     <div class="row" style="margin-top: 30px;">

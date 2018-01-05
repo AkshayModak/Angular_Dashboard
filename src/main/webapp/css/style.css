@@ -204,6 +204,88 @@ body {
 .deactive-dropdown {
 	visibility: hidden;
 	max-height: 0;
+	width: 0 !important;
+}
+
+.active-nav-dropdown > li {
+	/*visibility: visible;
+	max-height: auto;
+	margin-right: 10px;
+	margin-left: 10px;
+	width: 92% !important;
+	border-bottom-right-radius: 5px !important;
+  border-bottom-left-radius: 5px !important;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;*/
+  margin: 0;
+  width: 100% !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  padding-right: 7px;
+  padding-left: 7px;
+}
+
+.active-nav-dropdown {
+	position: fixed;
+  background-color: #242a3c;
+}
+
+.active-nav-dropdown > li > a {
+	text-decoration: none;
+	color: white;
+	font-family: 'Patrick Hand', cursive;
+  font-size: 16px;
+}
+
+.desktop-btns {
+		padding-right: 20px;
+}
+
+.desktop-btns > li > a:hover {
+		background-color: white !important;
+		color: black !important;
+		height: 100%;
+}
+
+.notifications-dropdown {
+		width: 400px;
+}
+
+.notifications-dropdown > li {
+		border-bottom: 1px solid #e5e5e5;
+}
+
+.notifications-dropdown > li > a {
+		padding: 10px;
+}
+
+.notifications-dropdown > li:nth-last-child(2) {
+		border-bottom: 2px solid #e5e5e5;
+}
+
+.notifications-dropdown > li:last-child > a {
+		padding: 15px;
+}
+
+.notifications-dropdown > li:last-child > a:hover {
+		text-decoration: underline;
+}
+
+.notifications-dropdown > li:last-child {
+		border-bottom: 0;
+}
+
+.navbar-dropdown {
+	line-height: 40px;
+	box-shadow: none !important;
+	cursor: pointer;
+	color: white !important;
+}
+
+.navbar-dropdown:hover {
+		background-color: white;
+		color: black !important;
 }
 
 @media (min-width:768px) and (max-width:991px) {
@@ -313,7 +395,6 @@ body {
 }
 
 .dashboard {
-    margin-top: 20px;
     width: 100%;
     overflow: hidden;
 }
@@ -800,4 +881,17 @@ legend {
 		.hide-icon {
 				display: none;
 		}
+}
+
+.giveMeEllipsis {
+   display: block !important; /* or inline-block */
+   text-overflow: ellipsis;
+   word-wrap: break-word;
+   overflow: hidden;
+   max-height: 3.6em;
+   width: 100%;
+}
+
+.giveMeEllipsis::after {
+		content: "...";
 }
