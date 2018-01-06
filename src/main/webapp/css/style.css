@@ -378,6 +378,7 @@ body {
 		background-color: white;
     border-radius: 3px;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+    margin-top: 40px;
 }
 
 .card-body > .card-title {
@@ -431,23 +432,6 @@ h4.secondary-info-two {
     text-align: center;
     padding: 10px;
     font-family: 'Cabin', sans-serif;
-}
-
-.table-half {
-	padding-top: 20px;
-}
-
-.table-half > .card {
-	border-radius: 0;
-}
-
-/*
-.table-half > .card > .card-body {
-	padding: 0;
-}*/
-
-.table-half > .card > .card-body > .table-striped > tbody > tr:nth-child(2n+1) > td, .table-half > .card > .card-body > .table-striped > tbody > tr:nth-child(2n+1) > th {
-   background-color: #e6ffff;
 }
 
 #content > div {
@@ -800,7 +784,7 @@ h4.secondary-info-two {
 		color: #FFFFFF;
 		box-shadow: 0 12px 20px -10px rgba(156, 39, 176, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(156, 39, 176, 0.2);
 		font-family: 'Patrick Hand', cursive;
-		background: #242a3c !important;
+		background: #242a3c;
 }
 
 .dashboard-card-header > h5 {
