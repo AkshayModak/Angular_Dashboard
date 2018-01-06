@@ -892,19 +892,6 @@ legend {
 		}
 }
 
-.giveMeEllipsis {
-   display: block !important; /* or inline-block */
-   text-overflow: ellipsis;
-   word-wrap: break-word;
-   overflow: hidden;
-   max-height: 3.6em;
-   width: 100%;
-}
-
-.giveMeEllipsis::after {
-		content: "...";
-}
-
 .navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
 		max-height: none;
 }

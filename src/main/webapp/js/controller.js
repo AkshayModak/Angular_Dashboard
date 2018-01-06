@@ -92,12 +92,6 @@ myApp.controller("navbarController", function($scope) {
     $scope.isNavCollapsed = true;
     $scope.isCollapsed = false;
     $scope.isCollapsedHorizontal = false;
-    $scope.showNotifications = false;
-
-    $scope.toggleNotification = function() {
-				$scope.showNotifications = !$scope.showNotifications;
-				console.log('==$scope.showNotifications==', $scope.showNotifications);
-    }
 });
 
 myApp.controller("dashboardController", function($scope, $rootScope, $timeout) {
