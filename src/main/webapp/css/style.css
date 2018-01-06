@@ -652,6 +652,7 @@ h4.secondary-info-two {
 		overflow-y: scroll;
 		overflow-x:hidden;
 		max-height:calc(100% - 100px);
+		margin: 0;
 }
 
 .email-card > .card-body > .card-title {
@@ -726,12 +727,12 @@ h4.secondary-info-two {
 		color: lightgrey;
 }
 
-.message-search > div > div > input.form-control {
+.search > div > div > input.form-control {
 		border-top-left-radius: 20px !important;
 		border-bottom-left-radius: 20px !important;
 }
 
-.message-search {
+.search {
 		padding: 15px;
 }
 
@@ -842,6 +843,7 @@ legend {
         margin-right: -15px;
         background-color: white;
         font-family: 'Patrick Hand', cursive;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
     }
     .grid-divider>[class*='col-'] {
         position: static;
@@ -863,12 +865,25 @@ legend {
 		.grid-divider {
 				background-color: white;
 				font-family: 'Patrick Hand', cursive;
+				box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
 		}
 		.col-padding {
         text-align: center;
         padding-top: 15px;
         padding-bottom: 15px;
     }
+}
+
+.grid-divider > div > div.col-padding > span {
+		font-size: 18px;
+}
+
+.grid-divider > div > div.col-padding > span > i.fa-caret-up {
+		color: #27BDBC;
+}
+
+.grid-divider > div > div.col-padding > span > i.fa-caret-down {
+		color: #FF4749;
 }
 
 @media (max-width: 445px) {
@@ -883,4 +898,27 @@ legend {
 
 .navbar-nav.visible-xs {
 		font-family: 'Patrick Hand', cursive;
+}
+
+.logs-card {
+		padding: 20px;
+		word-break: break-all;
+}
+
+.legend {
+		border-bottom: 0;
+		text-align: center;
+}
+
+.padding-left-0 {
+		padding-left: 0;
+}
+
+.padding-right-0 {
+		padding-right: 0;
+}
+
+.content-image > img {
+		width: 100px;
+		height: 100px;
 }
