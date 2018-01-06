@@ -796,10 +796,11 @@ h4.secondary-info-two {
 		border-radius: 3px;
 		padding: 20px;
 		font-size: 20px;
-		background: linear-gradient(60deg, #ab47bc, #8e24aa) !important;
+		/*background: linear-gradient(60deg, #ab47bc, #8e24aa) !important;*/
 		color: #FFFFFF;
 		box-shadow: 0 12px 20px -10px rgba(156, 39, 176, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(156, 39, 176, 0.2);
 		font-family: 'Patrick Hand', cursive;
+		background: #242a3c !important;
 }
 
 .dashboard-card-header > h5 {
